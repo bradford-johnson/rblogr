@@ -10,7 +10,7 @@ website:
         href: https://github.com/bradfordjohnson
 format:
   html:
-    theme: cosmo
+    theme: sandstone
     css: styles.css
 
 editor: visual

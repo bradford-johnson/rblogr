@@ -1,0 +1,10 @@
+---
+title: "This is not a Pipe?"
+author: "Bradford Johnson"
+date: "2022-09-15"
+categories: [dplyr, wrangling]
+---
+
+Test post
+
+![](pipe.png)
