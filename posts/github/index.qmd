@@ -1,5 +1,5 @@
 ---
-title: "GitHub + RStudio = Better Projects"
+title: "Why use GitHub in RStudio?"
 author: "Bradford Johnson"
 date: "2022-09-15"
 categories: [github, projects, Quarto]
@@ -25,7 +25,7 @@ Now when making a project in R, I create a repository with it and can push / pul
 >
 >     -   Each one gets their own `ReadMe` files that describes the project.
 >
-> -   Smaller files like individual `R Scripts` or `R Notebooks` go into my `R` repository, `.SQL` files queries go into the `SQL` repository and so on.
+> -   Smaller files like individual `R Scripts` or `R Notebooks` go into my `R` repository, `.SQL` files go into the `SQL` repository and so on.
 >
 >     -   Each main repository like `R` or `SQL` gets a `ReadMe` for describing my work in general and other details.
 
