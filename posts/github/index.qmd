@@ -33,6 +33,8 @@ In addition to this, I keep a clone of each repository on my local machine as a 
 
 Having a repository for each project is great as you can also have a GitHub Pages site for each of them to share your code, or even a deliverable. Using Quarto and GitHub Pages is such a smooth process to rapidly deploy reproducible deliverables for stakeholders. When setting up the Pages with GitHub it will automatically update the website with a push to the main branch, meaning I can update my website from RStudio.
 
+## Using Git in RStudio
+
 In RStudio you can access the `Git` tab once you are connected, and page will add records as your make changes to the files. You can check them off and click the green arrow to push the changes to GitHub.
 
 ![](r-git.png)
@@ -59,3 +61,21 @@ You can also hit the `Commit` button to then see the below example:
 > 1.  Hit the blue down arrow labeled "**Pull**"\
 >     ![](r-push-pull.png)
 > 2.  Done
+
+## Conclusion
+
+To some this may seem like more to set up, and sure it may be a little more than just hitting save. The most important takeaway is that some type of file organization method needs to be implemented and sooner rather than later.
+
+### The benefits of using GitHub:
+
+> 1.  Having that central cloud based storage of files and projects.
+>
+> 2.  Collaborating with others can be easier with this method as everyone would need to have an account and be authorized to contribute to the repository, opposed to emailing or sending files back and forth.
+>
+> 3.  Branches for not losing your main files when making edits.
+>
+> 4.  Access to GitHub Pages for projects (like this blog).
+>
+> 5.  Build a portfolio.
+>
+> 6.  Learn how Git and GitHub works!
