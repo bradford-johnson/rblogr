@@ -1,0 +1,12 @@
+---
+title: "GitHub + RStudio = Better Projects"
+author: "Bradford Johnson"
+date: "2022-09-15"
+categories: [github, projects]
+---
+
+# Using GitHub and RStudio Together
+
+Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner.
+
+![](yancy-min-842ofHC6MaI-unsplash.jpg)

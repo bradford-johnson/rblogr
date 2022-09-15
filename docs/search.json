@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "rblogr",
     "section": "",
-    "text": "dplyr\n\n\nwrangling\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
+    "text": "github\n\n\nprojects\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pipes/index.html",
@@ -26,5 +26,12 @@
     "title": "Welcome To My Blog",
     "section": "",
     "text": "I have been practicing with Quarto for a couple of weeks now, and have enjoyed it so much! Quarto has created many more opportunities for myself and the types of deliverable I can create. If you are using R or Python and have not gotten to use Quarto yet, then this is your sign to look into how awesome it is!\nClick the image below to go to Quarto’s Website"
+  },
+  {
+    "objectID": "posts/github/index.html",
+    "href": "posts/github/index.html",
+    "title": "GitHub + RStudio = Better Projects",
+    "section": "",
+    "text": "Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner."
   }
 ]
