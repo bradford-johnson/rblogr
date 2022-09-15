@@ -32,6 +32,6 @@
     "href": "posts/github/index.html",
     "title": "GitHub + RStudio = Better Projects",
     "section": "",
-    "text": "Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner."
+    "text": "Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner…\n\nAt first when I was learning R, I would only create R Script files and then save each plot as a .png. As time went on I discovered R Notebooks and R Markdown, these where perfect for practicing my R and having a single file with multiple different R Chunks that I could set up for each analysis stage. It was perfect because the file when saved would save a .html version, so it was a great way to work on and share projects.\nMore recently my projects became bigger and so did the files, but my local folder on my desktop named “Data Science” became more filled. At the same time I was creating my first GitHub account so I uploaded some of these R projects into repositories. Once I would make changes locally I would then replace the respective file on GitHub. This is the extent I used GitHub to, as a “Google Drive” in a way.\nHowever I was looking through RStudio’s settings and noticed the Git/SVN option:"
   }
 ]
