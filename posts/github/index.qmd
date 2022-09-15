@@ -2,7 +2,7 @@
 title: "GitHub + RStudio = Better Projects"
 author: "Bradford Johnson"
 date: "2022-09-15"
-categories: [github, projects]
+categories: [github, projects, Quarto]
 ---
 
 # Using GitHub and RStudio Together
@@ -16,3 +16,46 @@ At first when I was learning R, I would only create `R Script` files and then sa
 More recently my projects became bigger and so did the files, but my local folder on my desktop named "Data Science" became more filled. At the same time I was creating my first GitHub account so I uploaded some of these R projects into repositories. Once I would make changes locally I would then replace the respective file on GitHub. This is the extent I used GitHub to, as a "Google Drive" in a way.
 
 However I was looking through RStudio's settings and noticed the `Git/SVN` option: ![](r-settings.png)
+
+After clicking the RStudio [link](https://support.rstudio.com/hc/en-us/articles/200532077?version=2022.07.1%2B554&mode=desktop) I quickly learned you can connect RStudio to GitHub. I watched a few videos and I was able to connect the two together. I did find that having the desktop GitHub app helped with the initial set up and cloning your repositories.
+
+Now when making a project in R, I create a repository with it and can push / pull project changes live. I ended up creating a new GitHub account and starting fresh with this new organization. This is how I currently organize my GitHub:
+
+> -   Projects get their own repositories.
+>
+>     -   Each one gets their own `ReadMe` files that describes the project.
+>
+> -   Smaller files like individual `R Scripts` or `R Notebooks` go into my `R` repository, `.SQL` files queries go into the `SQL` repository and so on.
+>
+>     -   Each main repository like `R` or `SQL` gets a `ReadMe` for describing my work in general and other details.
+
+In addition to this, I keep a clone of each repository on my local machine as a backup, and as a way to edit and push/pull updates from GitHub.
+
+Having a repository for each project is great as you can also have a GitHub Pages site for each of them to share your code, or even a deliverable. Using Quarto and GitHub Pages is such a smooth process to rapidly deploy reproducible deliverables for stakeholders. When setting up the Pages with GitHub it will automatically update the website with a push to the main branch, meaning I can update my website from RStudio.
+
+In RStudio you can access the `Git` tab once you are connected, and page will add records as your make changes to the files. You can check them off and click the green arrow to push the changes to GitHub.
+
+![](r-git.png)
+
+You can also hit the `Commit` button to then see the below example:
+
+![](r-commit.png)
+
+### Steps to a Push
+
+> 1.  Check off all the changes on the left side.
+>
+> 2.  Enter a commit message.
+>
+> 3.  Press the commit button on the bottom right, a window like this should then pop up. ![](r-commit2.png)
+>
+> 4.  Close out of the pop up window, then hit the green up arrow labeled "**Push**" and you have done a push.\
+>     ![](r-push-pull.png)
+>
+> 5.  Done
+
+### Steps to a Pull
+
+> 1.  Hit the blue down arrow labeled "**Pull**"\
+>     ![](r-push-pull.png)
+> 2.  Done

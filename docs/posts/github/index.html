@@ -96,6 +96,7 @@ ul.task-list{list-style: none;}
                                 <div class="quarto-categories">
                 <div class="quarto-category">github</div>
                 <div class="quarto-category">projects</div>
+                <div class="quarto-category">Quarto</div>
               </div>
                   </div>
   </div>
@@ -137,8 +138,51 @@ ul.task-list{list-style: none;}
 <p>At first when I was learning R, I would only create <code>R Script</code> files and then save each plot as a <code>.png</code>. As time went on I discovered <code>R Notebooks</code> and <code>R Markdown</code>, these where perfect for practicing my R and having a single file with multiple different <code>R Chunks</code> that I could set up for each analysis stage. It was perfect because the file when saved would save a <code>.html</code> version, so it was a great way to work on and share projects.</p>
 <p>More recently my projects became bigger and so did the files, but my local folder on my desktop named “Data Science” became more filled. At the same time I was creating my first GitHub account so I uploaded some of these R projects into repositories. Once I would make changes locally I would then replace the respective file on GitHub. This is the extent I used GitHub to, as a “Google Drive” in a way.</p>
 <p>However I was looking through RStudio’s settings and noticed the <code>Git/SVN</code> option: <img src="r-settings.png" class="img-fluid"></p>
+<p>After clicking the RStudio <a href="https://support.rstudio.com/hc/en-us/articles/200532077?version=2022.07.1%2B554&amp;mode=desktop">link</a> I quickly learned you can connect RStudio to GitHub. I watched a few videos and I was able to connect the two together. I did find that having the desktop GitHub app helped with the initial set up and cloning your repositories.</p>
+<p>Now when making a project in R, I create a repository with it and can push / pull project changes live. I ended up creating a new GitHub account and starting fresh with this new organization. This is how I currently organize my GitHub:</p>
+<blockquote class="blockquote">
+<ul>
+<li><p>Projects get their own repositories.</p>
+<ul>
+<li>Each one gets their own <code>ReadMe</code> files that describes the project.</li>
+</ul></li>
+<li><p>Smaller files like individual <code>R Scripts</code> or <code>R Notebooks</code> go into my <code>R</code> repository, <code>.SQL</code> files queries go into the <code>SQL</code> repository and so on.</p>
+<ul>
+<li>Each main repository like <code>R</code> or <code>SQL</code> gets a <code>ReadMe</code> for describing my work in general and other details.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>In addition to this, I keep a clone of each repository on my local machine as a backup, and as a way to edit and push/pull updates from GitHub.</p>
+<p>Having a repository for each project is great as you can also have a GitHub Pages site for each of them to share your code, or even a deliverable. Using Quarto and GitHub Pages is such a smooth process to rapidly deploy reproducible deliverables for stakeholders. When setting up the Pages with GitHub it will automatically update the website with a push to the main branch, meaning I can update my website from RStudio.</p>
+<p>In RStudio you can access the <code>Git</code> tab once you are connected, and page will add records as your make changes to the files. You can check them off and click the green arrow to push the changes to GitHub.</p>
+<p><img src="r-git.png" class="img-fluid"></p>
+<p>You can also hit the <code>Commit</code> button to then see the below example:</p>
+<p><img src="r-commit.png" class="img-fluid"></p>
+<section id="steps-to-a-push" class="level3">
+<h3 class="anchored" data-anchor-id="steps-to-a-push">Steps to a Push</h3>
+<blockquote class="blockquote">
+<ol type="1">
+<li><p>Check off all the changes on the left side.</p></li>
+<li><p>Enter a commit message.</p></li>
+<li><p>Press the commit button on the bottom right, a window like this should then pop up. <img src="r-commit2.png" class="img-fluid"></p></li>
+<li><p>Close out of the pop up window, then hit the green up arrow labeled “<strong>Push</strong>” and you have done a push.<br>
+<img src="r-push-pull.png" class="img-fluid"></p></li>
+<li><p>Done</p></li>
+</ol>
+</blockquote>
+</section>
+<section id="steps-to-a-pull" class="level3">
+<h3 class="anchored" data-anchor-id="steps-to-a-pull">Steps to a Pull</h3>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Hit the blue down arrow labeled “<strong>Pull</strong>”<br>
+<img src="r-push-pull.png" class="img-fluid"></li>
+<li>Done</li>
+</ol>
+</blockquote>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
