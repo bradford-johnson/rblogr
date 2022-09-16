@@ -1,0 +1,16 @@
+{
+  "hash": "d380dfb7f1401bf37392dbb74f32ea72",
+  "result": {
+    "markdown": "---\ntitle: \"Identifying and Removing Outliers\"\nauthor: \"Bradford Johnson\"\ndate: \"2022-09-16\"\ncategories: [cleaning, outliers]\n---\n\n\n# Identifying and Removing Outliers\n\nOutliers can distort a dataset, but how do you find and remove them?\n\n![](rupert-britton-l37N7a1lL6w-unsplash.jpg)\n\n## What are outliers?\n\nThis image is from [DataCamp's](https://campus.datacamp.com/courses/introduction-to-statistics-in-r/summary-statistics?ex=10) learning platform, and it shows a visual of a boxplot, and the outliers on either side of the distribution. To find the outliers on the lower range you do the following equation `Q1 - 1.5 x IQR`. To find outliers on the upper range you use this equation `Q3 + 1.5 * IQR`.\n\n![](data-camp-outliers.png)\n\nYou can use those equations to then filter out the outliers and then continue with your analysis. I have created some data with outliers to show how you would do this in R.\n\n\n\n\n\n## Steps to identify outliers:\n\n1.  **Get the 25th and 75th percentile of a dataset**\n\n``` r\n    Q = quantile(DATAFRAME$columnName, probs = c(.25,.75), na.rm = FALSE)\n```\n\n2.  **Find the Interquartile Range (IQR)**\n\n``` r\n    iqr = IQR(DATAFRAMEf$columnName)\n```\n\n3.  **Find upper and lower cut off ranges**\n\n``` r\n    up <-  Q[2]+1.5*iqr # Upper Range\n    low <- Q[1]-1.5*iqr # Lower Range\n```\n\n## Steps to remove outliers:\n\n1.  **Identify outliers**\n\n    > As shown above\n\n2.  **Use dplyr to filter**\n\n    ``` r\n    install.packages(\"dplyr\") \n    library(dplyr)\n    ```\n\n3.  **Filter**\n\n    ``` r\n    clean_dataframe <- DATAFRAME %>%\n      filter(columnName > low & var1.1 < up)\n    ```\n\n## Here is an example of the full code working with a data frame\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# remove outliers steps\n# 1. get Q1 and Q3 \nQ = quantile(outlier_df$var1.1, probs = c(.25,.75), na.rm = FALSE)\n# 2. get IQR\niqr = IQR(outlier_df$var1.1)\n# 3. get upper and lower ranges\nup <-  Q[2]+1.5*iqr # Upper Range  \nlow <- Q[1]-1.5*iqr # Lower Range\n# 4. remove outliers (outlier_df is the name of my data frame, var1.1 is the name of the column that I am removing outliers from)\nno_outliers_p <- outlier_df %>%\n  filter(var1.1 > low & var1.1 < up) %>%\n  ggplot(aes(x = var1.1)) +\n  geom_boxplot() + \n  theme_classic() +\n  labs(title = \"Without Outliers\") +\n  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank())\n```\n:::\n\n\n## With Outliers vs Without Outliers\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# patchwork to show plots\noutlier_p / no_outliers_p\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
