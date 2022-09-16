@@ -5,7 +5,7 @@ date: "2022-09-16"
 categories: [cleaning, outliers]
 ---
 
-# Identifying and Removing Outliers
+## **Identifying and Removing Outliers**
 
 Outliers can distort a dataset, but how do you find and remove them?
 

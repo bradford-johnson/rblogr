@@ -2,10 +2,10 @@
 title: "Why use GitHub in RStudio?"
 author: "Bradford Johnson"
 date: "2022-09-15"
-categories: [github, projects, Quarto]
+categories: [github, projects, quarto]
 ---
 
-# Using GitHub and RStudio Together
+## **Using GitHub and RStudio Together**
 
 Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner...
 

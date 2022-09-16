@@ -1,0 +1,82 @@
+---
+title: "Connect to a postgreSQL Database"
+author: "Bradford Johnson"
+date: "2022-09-17"
+categories: [SQL, database]
+---
+
+## **Connect to postgreSQL Database in R**
+
+Connecting to a database can be an effective way to import data into R for analysis. In this post I will be showing how to connect to a postgreSQL database in RStudio.
+
+![](jan-antonin-kolar-lRoX0shwjUQ-unsplash.jpg)
+
+## Packages
+
+You will need the `DBI`, `RPostgres`, and `dplyr` packages.
+
+``` r
+install.packages("DBI")
+install.packages("RPostgres")
+install.packages("dplyr")
+```
+
+Once you install the packages you will need to load them.
+
+``` r
+library(DBI)
+library(RPostgres)
+library(dplyr)
+```
+
+## Connecting to the Database
+
+After loading the packages you can then connect to your database with this code and your database's credentials. These credentials will be saved as `con`.
+
+``` r
+# establish connection with postgres data base
+con <- dbConnect(RPostgres::Postgres(),dbname = 'name',  
+      # enter name of database in the single quotes
+                 
+      host = 'address', 
+# replace 'address' and enter the address of the database inside the single quotes
+                
+      port = 5432, 
+# enter the port for the database 
+      user = 'username', 
+# replace 'username' with your username inside single quotes
+                 
+      password = 'password') 
+# replace 'password' with your password inside single quotes
+```
+
+## Writing a SQL Query in R
+
+After establishing your connection, you can then create your `SQL` query. It will be saved as `res`.
+
+``` r
+# code to make sql query --inside of the double quotes you can create your query
+res <- dbSendQuery(con, "
+                   SELECT COUNT(*)
+                   FROM ;
+                   ")
+```
+
+To execute your query you will then want to write and run this code, using `dbFetch()` with the name of your query object being the argument, in this case it is `res`. The results from this query will be saved as the name you assign it, for this code it is called `df`.
+
+``` r
+# execute query
+df <- dbFetch(res) 
+# this will save the results of the query as an R data frame called 'DF'
+```
+
+## Disconnect from Database
+
+Once you have run the query you can then clean the query and disconnect from the database using these functions and arguments respectively.
+
+``` r
+# clear query
+dbClearResult(res)
+# disconnect from database
+dbDisconnect(con)
+```
