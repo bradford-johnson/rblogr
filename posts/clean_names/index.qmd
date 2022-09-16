@@ -2,7 +2,7 @@
 title: "Cleaning up Column Names with Janitor"
 author: "Bradford Johnson"
 date: "2022-09-16"
-categories: [cleaning, janitor, readr, dplyr]
+categories: [cleaning, janitor]
 ---
 
 ## **Dealing with Dirty Column Headers**

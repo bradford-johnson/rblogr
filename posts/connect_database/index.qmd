@@ -2,7 +2,7 @@
 title: "Connect to a postgreSQL Database"
 author: "Bradford Johnson"
 date: "2022-09-17"
-categories: [SQL, database]
+categories: [SQL]
 ---
 
 ## **Connect to postgreSQL Database in R**

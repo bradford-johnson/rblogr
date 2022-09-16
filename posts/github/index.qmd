@@ -1,5 +1,5 @@
 ---
-title: "Why use GitHub in RStudio?"
+title: "Why use GitHub with RStudio?"
 author: "Bradford Johnson"
 date: "2022-09-15"
 categories: [github, projects, quarto]

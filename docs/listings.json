@@ -3,6 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/posts/connect_database/index.html",
+      "/posts/percents/index.html",
       "/posts/clean_names/index.html",
       "/posts/outliers/index.html",
       "/posts/github/index.html",

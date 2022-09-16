@@ -1,0 +1,41 @@
+---
+title: "Adding Percent Signs with Formattable"
+author: "Bradford Johnson"
+date: "2022-09-17"
+categories: [cleaning, formattable]
+---
+
+## **Use Formattable for Percent Signs**
+
+Have you wanted to create a visual or table, and struggled to figure out how to change decimals to percents in R?
+
+![](david-kristianto-prE6XvaFEMY-unsplash.jpg)
+
+### The Formattable Package
+
+Here is how you install and load the package, and you can [click here](https://renkun-ken.github.io/formattable/) to see the documentation.
+
+``` r
+install.packages("formattable")
+library(formattable)
+```
+
+I will also be loading the `tidyverse` and `janitor` packages in the background.
+
+```{r include=FALSE}
+library(janitor)
+library(tidyverse)
+iris_df <- iris %>%
+  clean_names()
+```
+
+### Adding Percents
+
+Here is how you would break down the `iris` dataset by species, using the `formattable` package to get percents of each species.
+
+```{r}
+iris_df %>%
+  group_by(species) %>%
+  summarise(cnt = n()) %>%
+  mutate(freq = formattable::percent(cnt / sum(cnt)))
+```
