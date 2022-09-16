@@ -9,7 +9,7 @@
 <meta name="author" content="Bradford Johnson">
 <meta name="dcterms.date" content="2022-09-16">
 
-<title>rblogr - Identifying and Removing Outliers</title>
+<title>rblogr - Cleaning up Column Names with Janitor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,10 +155,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Identifying and Removing Outliers</h1>
+      <h1 class="title">Cleaning up Column Names with Janitor</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">cleaning</div>
-                <div class="quarto-category">outliers</div>
+                <div class="quarto-category">janitor</div>
+                <div class="quarto-category">readr</div>
+                <div class="quarto-category">dplyr</div>
               </div>
                   </div>
   </div>
@@ -193,75 +195,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="identifying-and-removing-outliers" class="level1">
-<h1>Identifying and Removing Outliers</h1>
-<p>Outliers can distort a dataset, but how do you find and remove them?</p>
-<p><img src="rupert-britton-l37N7a1lL6w-unsplash.jpg" class="img-fluid"></p>
-<section id="what-are-outliers" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-outliers">What are outliers?</h2>
-<p>This image is from <a href="https://campus.datacamp.com/courses/introduction-to-statistics-in-r/summary-statistics?ex=10">DataCamp’s</a> learning platform, and it shows a visual of a boxplot, and the outliers on either side of the distribution. To find the outliers on the lower range you do the following equation <code>Q1 - 1.5 x IQR</code>. To find outliers on the upper range you use this equation <code>Q3 + 1.5 * IQR</code>.</p>
-<p><img src="data-camp-outliers.png" class="img-fluid"></p>
-<p>You can use those equations to then filter out the outliers and then continue with your analysis. I have created some data with outliers to show how you would do this in R.</p>
-</section>
-<section id="steps-to-identify-outliers" class="level2">
-<h2 class="anchored" data-anchor-id="steps-to-identify-outliers">Steps to identify outliers:</h2>
-<ol type="1">
-<li><strong>Get the 25th and 75th percentile of a dataset</strong></li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    Q <span class="ot">=</span> <span class="fu">quantile</span>(DATAFRAME<span class="sc">$</span>columnName, <span class="at">probs =</span> <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>), <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li><strong>Find the Interquartile Range (IQR)</strong></li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    iqr <span class="ot">=</span> <span class="fu">IQR</span>(DATAFRAMEf<span class="sc">$</span>columnName)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li><strong>Find upper and lower cut off ranges</strong></li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    up <span class="ot">&lt;-</span>  Q[<span class="dv">2</span>]<span class="sc">+</span><span class="fl">1.5</span><span class="sc">*</span>iqr <span class="co"># Upper Range</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    low <span class="ot">&lt;-</span> Q[<span class="dv">1</span>]<span class="sc">-</span><span class="fl">1.5</span><span class="sc">*</span>iqr <span class="co"># Lower Range</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="steps-to-remove-outliers" class="level2">
-<h2 class="anchored" data-anchor-id="steps-to-remove-outliers">Steps to remove outliers:</h2>
-<ol type="1">
-<li><p><strong>Identify outliers</strong></p>
+<section id="dealing-with-dirty-column-headers" class="level2">
+<h2 class="anchored" data-anchor-id="dealing-with-dirty-column-headers"><strong>Dealing with Dirty Column Headers</strong></h2>
+<p>Are they called column headers or column names? Perhaps it depends, but working with dirty ones can be avoided…</p>
+<p><img src="pan-xiaozhen-pj-BrFZ9eAA-unsplash.jpg" class="img-fluid"></p>
+<p>Working with dirty data is part of being a data analyst, and the <code>janitor</code> package is great because it can help clean up the column names so they are easier to work with. I will load in the <code>readr</code> package to import a hand crafted <code>.csv</code> that I made as an example. I will also load in the <code>dplyr</code> package so I can pipe the data into functions.</p>
 <blockquote class="blockquote">
-<p>As shown above</p>
-</blockquote></li>
-<li><p><strong>Use dplyr to filter</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>) </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Filter</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>clean_dataframe <span class="ot">&lt;-</span> DATAFRAME <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(columnName <span class="sc">&gt;</span> low <span class="sc">&amp;</span> columnName <span class="sc">&lt;</span> up)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
+<p><code>Click on the hex Janitor logo to see the documentation</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://sfirke.github.io/janitor/"><img src="janitor_logo.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</blockquote>
 </section>
-<section id="here-is-an-example-of-the-full-code-working-with-a-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="here-is-an-example-of-the-full-code-working-with-a-data-frame">Here is an example of the full code working with a data frame</h2>
+<section id="the-packages" class="level2">
+<h2 class="anchored" data-anchor-id="the-packages">The Packages</h2>
+<p>Here is how you install and load the packages.</p>
+<blockquote class="blockquote">
+<p><strong>Install:</strong></p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p><strong>Load:</strong></p>
+</blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="importing-a-.csv-file" class="level2">
+<h2 class="anchored" data-anchor-id="importing-a-.csv-file">Importing a .csv File</h2>
+<p>Importing a <code>.csv</code> file is quite simple and using the <code>readr</code> package, the <code>read_csv(" ")</code> function will let you import a .csv as a data frame and you can use <code>&lt;-</code> or <code>=</code> to assign the data frame a name.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove outliers steps</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. get Q1 and Q3 </span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">=</span> <span class="fu">quantile</span>(outlier_df<span class="sc">$</span>var1<span class="fl">.1</span>, <span class="at">probs =</span> <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>), <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. get IQR</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>iqr <span class="ot">=</span> <span class="fu">IQR</span>(outlier_df<span class="sc">$</span>var1<span class="fl">.1</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. get upper and lower ranges</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>up <span class="ot">&lt;-</span>  Q[<span class="dv">2</span>]<span class="sc">+</span><span class="fl">1.5</span><span class="sc">*</span>iqr <span class="co"># Upper Range  </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>low <span class="ot">&lt;-</span> Q[<span class="dv">1</span>]<span class="sc">-</span><span class="fl">1.5</span><span class="sc">*</span>iqr <span class="co"># Lower Range</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. remove outliers (outlier_df is the name of my data frame, var1.1 is the name of the column that I am removing outliers from)</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>no_outliers_p <span class="ot">&lt;-</span> outlier_df <span class="sc">%&gt;%</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(var1<span class="fl">.1</span> <span class="sc">&gt;</span> low <span class="sc">&amp;</span> var1<span class="fl">.1</span> <span class="sc">&lt;</span> up) <span class="sc">%&gt;%</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> var1<span class="fl">.1</span>)) <span class="sc">+</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Without Outliers"</span>) <span class="sc">+</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(), <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in .csv</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dirty_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'janitor-example.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="dirty-column-names" class="level3">
+<h3 class="anchored" data-anchor-id="dirty-column-names">Dirty Column Names</h3>
+<p>Here is what the dirty column names on this data frame look like. The capitalization is all wild, there are spaces between characters, some of the names are not concise…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dirty_df <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 x 3
+  `DAY OF THE WEEK` `TEMP F` `WEaThEr CONDITIONS`
+  &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;               
+1 Monday                  98 sunny               
+2 Tuesday                 95 sunny               
+3 Wednesday               70 cloudy              
+4 Thursday                85 sunny               
+5 Friday                  83 sunny               
+6 Saturday                85 sunny               </code></pre>
+</div>
 </div>
 </section>
-<section id="with-outliers-vs-without-outliers" class="level2">
-<h2 class="anchored" data-anchor-id="with-outliers-vs-without-outliers">With Outliers vs Without Outliers</h2>
+</section>
+<section id="cleaning-column-names" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-column-names">Cleaning Column Names</h2>
+<p>Now using the <code>clean_names()</code> function from the <code>janitor</code> package along with some <code>mutate()</code> functions I will load in the same data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># patchwork to show plots</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>outlier_p <span class="sc">/</span> no_outliers_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in csv but with janitor and dplyr functions</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>clean_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'janitor-example.csv'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weather_condition =</span> w_ea_th_er_conditions) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_temp_f =</span> temp_f) <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weekday =</span> day_of_the_week) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(weekday, avg_temp_f, weather_condition)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="cleaned-column-names" class="level3">
+<h3 class="anchored" data-anchor-id="cleaned-column-names">Cleaned Column Names</h3>
+<p>Here is how the cleaned data frame looks. The column names are now easier to work with, and much better understood.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>clean_df <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 x 3
+  weekday   avg_temp_f weather_condition
+  &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;            
+1 Monday            98 sunny            
+2 Tuesday           95 sunny            
+3 Wednesday         70 cloudy           
+4 Thursday          85 sunny            
+5 Friday            83 sunny            
+6 Saturday          85 sunny            </code></pre>
 </div>
 </div>
 

@@ -72,7 +72,7 @@ outlier_p <- outlier_df %>%
 
     ``` r
     clean_dataframe <- DATAFRAME %>%
-      filter(columnName > low & var1.1 < up)
+      filter(columnName > low & columnName < up)
     ```
 
 ## Here is an example of the full code working with a data frame

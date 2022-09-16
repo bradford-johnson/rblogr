@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "rblogr",
     "section": "",
-    "text": "cleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
+    "text": "cleaning\n\n\njanitor\n\n\nreadr\n\n\ndplyr\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pipes/index.html",
@@ -39,6 +39,34 @@
     "href": "posts/outliers/index.html",
     "title": "Identifying and Removing Outliers",
     "section": "",
-    "text": "Outliers can distort a dataset, but how do you find and remove them?\n\n\n\nThis image is from DataCamp’s learning platform, and it shows a visual of a boxplot, and the outliers on either side of the distribution. To find the outliers on the lower range you do the following equation Q1 - 1.5 x IQR. To find outliers on the upper range you use this equation Q3 + 1.5 * IQR.\n\nYou can use those equations to then filter out the outliers and then continue with your analysis. I have created some data with outliers to show how you would do this in R.\n\n\n\n\nGet the 25th and 75th percentile of a dataset\n\n    Q = quantile(DATAFRAME$columnName, probs = c(.25,.75), na.rm = FALSE)\n\nFind the Interquartile Range (IQR)\n\n    iqr = IQR(DATAFRAMEf$columnName)\n\nFind upper and lower cut off ranges\n\n    up <-  Q[2]+1.5*iqr # Upper Range\n    low <- Q[1]-1.5*iqr # Lower Range\n\n\n\n\nIdentify outliers\n\nAs shown above\n\nUse dplyr to filter\ninstall.packages(\"dplyr\") \nlibrary(dplyr)\nFilter\nclean_dataframe <- DATAFRAME %>%\n  filter(columnName > low & var1.1 < up)\n\n\n\n\n\n# remove outliers steps\n# 1. get Q1 and Q3 \nQ = quantile(outlier_df$var1.1, probs = c(.25,.75), na.rm = FALSE)\n# 2. get IQR\niqr = IQR(outlier_df$var1.1)\n# 3. get upper and lower ranges\nup <-  Q[2]+1.5*iqr # Upper Range  \nlow <- Q[1]-1.5*iqr # Lower Range\n# 4. remove outliers (outlier_df is the name of my data frame, var1.1 is the name of the column that I am removing outliers from)\nno_outliers_p <- outlier_df %>%\n  filter(var1.1 > low & var1.1 < up) %>%\n  ggplot(aes(x = var1.1)) +\n  geom_boxplot() + \n  theme_classic() +\n  labs(title = \"Without Outliers\") +\n  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank())\n\n\n\n\n\n# patchwork to show plots\noutlier_p / no_outliers_p"
+    "text": "Outliers can distort a dataset, but how do you find and remove them?\n\n\n\nThis image is from DataCamp’s learning platform, and it shows a visual of a boxplot, and the outliers on either side of the distribution. To find the outliers on the lower range you do the following equation Q1 - 1.5 x IQR. To find outliers on the upper range you use this equation Q3 + 1.5 * IQR.\n\nYou can use those equations to then filter out the outliers and then continue with your analysis. I have created some data with outliers to show how you would do this in R.\n\n\n\n\nGet the 25th and 75th percentile of a dataset\n\n    Q = quantile(DATAFRAME$columnName, probs = c(.25,.75), na.rm = FALSE)\n\nFind the Interquartile Range (IQR)\n\n    iqr = IQR(DATAFRAMEf$columnName)\n\nFind upper and lower cut off ranges\n\n    up <-  Q[2]+1.5*iqr # Upper Range\n    low <- Q[1]-1.5*iqr # Lower Range\n\n\n\n\nIdentify outliers\n\nAs shown above\n\nUse dplyr to filter\ninstall.packages(\"dplyr\") \nlibrary(dplyr)\nFilter\nclean_dataframe <- DATAFRAME %>%\n  filter(columnName > low & columnName < up)\n\n\n\n\n\n# remove outliers steps\n# 1. get Q1 and Q3 \nQ = quantile(outlier_df$var1.1, probs = c(.25,.75), na.rm = FALSE)\n# 2. get IQR\niqr = IQR(outlier_df$var1.1)\n# 3. get upper and lower ranges\nup <-  Q[2]+1.5*iqr # Upper Range  \nlow <- Q[1]-1.5*iqr # Lower Range\n# 4. remove outliers (outlier_df is the name of my data frame, var1.1 is the name of the column that I am removing outliers from)\nno_outliers_p <- outlier_df %>%\n  filter(var1.1 > low & var1.1 < up) %>%\n  ggplot(aes(x = var1.1)) +\n  geom_boxplot() + \n  theme_classic() +\n  labs(title = \"Without Outliers\") +\n  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank())\n\n\n\n\n\n# patchwork to show plots\noutlier_p / no_outliers_p"
+  },
+  {
+    "objectID": "posts/clean_names/index.html",
+    "href": "posts/clean_names/index.html",
+    "title": "Cleaning up Column Names with Janitor",
+    "section": "",
+    "text": "Are they called column headers or column names? Perhaps it depends, but working with dirty ones can be avoided…\n\nWorking with dirty data is part of being a data analyst, and the janitor package is great because it can help clean up the column names so they are easier to work with. I will load in the readr package to import a hand crafted .csv that I made as an example. I will also load in the dplyr package so I can pipe the data into functions.\n\nClick on the hex Janitor logo to see the documentation"
+  },
+  {
+    "objectID": "posts/clean_names/index.html#the-packages",
+    "href": "posts/clean_names/index.html#the-packages",
+    "title": "Cleaning up Column Names with Janitor",
+    "section": "The Packages",
+    "text": "The Packages\nHere is how you install and load the packages.\n\nInstall:\n\ninstall.packages(\"janitor\")\ninstall.packages(\"readr\")\ninstall.packages(\"dplyr\")\n\nLoad:\n\nlibrary(janitor)\nlibrary(readr)\nlibrary(dplyr)"
+  },
+  {
+    "objectID": "posts/clean_names/index.html#importing-a-.csv-file",
+    "href": "posts/clean_names/index.html#importing-a-.csv-file",
+    "title": "Cleaning up Column Names with Janitor",
+    "section": "Importing a .csv File",
+    "text": "Importing a .csv File\nImporting a .csv file is quite simple and using the readr package, the read_csv(\" \") function will let you import a .csv as a data frame and you can use <- or = to assign the data frame a name.\n\n# read in .csv\ndirty_df <- read_csv('janitor-example.csv')\n\n\nDirty Column Names\nHere is what the dirty column names on this data frame look like. The capitalization is all wild, there are spaces between characters, some of the names are not concise…\n\ndirty_df %>% \n  head()\n\n# A tibble: 6 x 3\n  `DAY OF THE WEEK` `TEMP F` `WEaThEr CONDITIONS`\n  <chr>                <dbl> <chr>               \n1 Monday                  98 sunny               \n2 Tuesday                 95 sunny               \n3 Wednesday               70 cloudy              \n4 Thursday                85 sunny               \n5 Friday                  83 sunny               \n6 Saturday                85 sunny"
+  },
+  {
+    "objectID": "posts/clean_names/index.html#cleaning-column-names",
+    "href": "posts/clean_names/index.html#cleaning-column-names",
+    "title": "Cleaning up Column Names with Janitor",
+    "section": "Cleaning Column Names",
+    "text": "Cleaning Column Names\nNow using the clean_names() function from the janitor package along with some mutate() functions I will load in the same data frame.\n\n# read in csv but with janitor and dplyr functions\nclean_df <- read_csv('janitor-example.csv') %>%\n  clean_names() %>%\n  mutate(weather_condition = w_ea_th_er_conditions) %>%\n  mutate(avg_temp_f = temp_f) %>%\n  mutate(weekday = day_of_the_week) %>%\n  select(weekday, avg_temp_f, weather_condition)\n\n\nCleaned Column Names\nHere is how the cleaned data frame looks. The column names are now easier to work with, and much better understood.\n\nclean_df %>%\n  head()\n\n# A tibble: 6 x 3\n  weekday   avg_temp_f weather_condition\n  <chr>          <dbl> <chr>            \n1 Monday            98 sunny            \n2 Tuesday           95 sunny            \n3 Wednesday         70 cloudy           \n4 Thursday          85 sunny            \n5 Friday            83 sunny            \n6 Saturday          85 sunny"
   }
 ]

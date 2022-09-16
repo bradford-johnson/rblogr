@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/clean_names/index.html",
       "/posts/outliers/index.html",
       "/posts/github/index.html",
       "/posts/welcome/index.html"
