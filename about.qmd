@@ -10,9 +10,12 @@ about:
       text: Github
       href: https://github.com/bradfordjohnson
 ---
-This blog is a project I wanted to do in order to share R with others. I want to share R tutorials, tips and tricks, and also use it as a portfolio for my work in R and data analytics in general. This blog was originally going to be a book titled "R Cookbook". While working on this book with all the different content I wanted to include it became clearer that a blog would be a more effective medium to continuously update and add content indefinitely.
-  
-> ![](rblogr.png)  
+
+My name is Bradford Johnson, I love working with data and I taught myself `R`. This blog is a project I wanted to do in order to share R with others. I want to share R tutorials, tips and tricks, and also use it as a portfolio for my work in R and data analytics in general.
+
+This blog was originally going to be a book titled "R Cookbook". While working on this book it became clearer that a blog would be a more effective medium to continuously update and add content to indefinitely.
+
+> ![](rblogr.png)\
 > *Programming joke on converting my previous `R Cookbook` project to this blog made with Quarto named `rblogr`*
-  
+
 The tutorials and content may vary as they will mostly contain concepts and solutions that relate to what I am currently working on. If you have any content recommendations or feedback, please reach out and message me!

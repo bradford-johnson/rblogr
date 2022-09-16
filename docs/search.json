@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Programming joke on converting my previous R Cookbook project to this blog made with Quarto named rblogr\n\nThe tutorials and content may vary as they will mostly contain concepts and solutions that relate to what I am currently working on. If you have any content recommendations or feedback, please reach out and message me!"
+    "text": "This blog was originally going to be a book titled “R Cookbook”. While working on this book it became clearer that a blog would be a more effective medium to continuously update and add content to indefinitely.\n\n\nProgramming joke on converting my previous R Cookbook project to this blog made with Quarto named rblogr\n\nThe tutorials and content may vary as they will mostly contain concepts and solutions that relate to what I am currently working on. If you have any content recommendations or feedback, please reach out and message me!"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "rblogr",
     "section": "",
-    "text": "cleaning\n\n\njanitor\n\n\nreadr\n\n\ndplyr\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
+    "text": "cleaning\n\n\njanitor\n\n\nreadr\n\n\ndplyr\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nQuarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pipes/index.html",

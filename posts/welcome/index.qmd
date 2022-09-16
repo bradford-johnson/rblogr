@@ -2,7 +2,7 @@
 title: "Welcome To My Blog"
 author: "Bradford Johnson"
 date: "2022-09-15"
-categories: [Quarto]
+categories: [quarto]
 ---
 
 This is my first post in my Quarto blog. This blog is made in RStudio using Quarto, and is hosted via GitHub Pages.
