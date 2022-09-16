@@ -158,7 +158,7 @@
     "href": "projects.html",
     "title": "My Projects",
     "section": "",
-    "text": "text\n\n\nsentiment\n\n\nSQL\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
+    "text": "text\n\n\nsentiment\n\n\nSQL\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nbusiness\n\n\nexcel\n\n\nmodel\n\n\n\n\n\n\n\n\n\n\n\nAug 23, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/test/index.html",
@@ -180,5 +180,19 @@
     "title": "Adding Percent Signs with Formattable",
     "section": "",
     "text": "Have you wanted to create a visual or table, and struggled to figure out how to change decimals to percents in R?\n\n\n\nHere is how you install and load the package, and you can click here to see the documentation.\ninstall.packages(\"formattable\")\nlibrary(formattable)\nI will also be loading the tidyverse and janitor packages in the background.\n\n\n\nHere is how you would break down the iris dataset by species, using the formattable package to get percents of each species.\n\niris_df %>%\n  group_by(species) %>%\n  summarise(cnt = n()) %>%\n  mutate(freq = formattable::percent(cnt / sum(cnt)))\n\n# A tibble: 3 x 3\n  species      cnt freq      \n  <fct>      <int> <formttbl>\n1 setosa        50 33.33%    \n2 versicolor    50 33.33%    \n3 virginica     50 33.33%"
+  },
+  {
+    "objectID": "projects/twitter/index.html#project-status",
+    "href": "projects/twitter/index.html#project-status",
+    "title": "Twitter Project",
+    "section": "Project Status | ",
+    "text": "Project Status | \nProject using R and postgreSQL to conduct an analysis on Tweets extracted with R via the Twitter API."
+  },
+  {
+    "objectID": "projects/car-rental/index.html",
+    "href": "projects/car-rental/index.html",
+    "title": "Revenue Growth Model",
+    "section": "",
+    "text": "Business Analysis for Lariat Rent-A-Car\n\nExamined and cleaned historical sales data using Excel (VLookUp, pivot tables and t-tests)\nFacilitated exploratory data analysis and assessed by KPI performance.\nDeveloped and presented models that showcased a 40% increase in profits."
   }
 ]

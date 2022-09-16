@@ -1,0 +1,18 @@
+---
+title: "Revenue Growth Model"
+author: "Bradford Johnson"
+date: "2022-08-23"
+categories: [business, excel, model]
+---
+
+## **Excel Model and Analysis \|** ![Badge](https://img.shields.io/badge/%E2%9C%85-Complete-brightgreen) **\|** [![](https://img.shields.io/badge/%F0%9F%94%8D-CLICK%20HERE%20to%20view%20project-informational)](https://1drv.ms/x/s!Ahpkb3AfX4xfgsA0TbaqsDQorD8vKA?e=Uo7zb4)
+
+**Business Analysis for Lariat Rent-A-Car**
+
+> Examined and cleaned historical sales data using Excel (VLookUp, pivot tables and t-tests)
+>
+> Facilitated exploratory data analysis and assessed by KPI performance.
+>
+> Developed and presented models that showcased a 40% increase in profits.
+
+![](lucas-hobbs-gEHSvDMHnEA-unsplash.jpg)
