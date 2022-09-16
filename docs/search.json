@@ -9,7 +9,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "rblogr",
+    "title": "Blog",
     "section": "",
     "text": "SQL\n\n\ndatabase\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\njanitor\n\n\nreadr\n\n\ndplyr\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
@@ -152,5 +152,26 @@
     "title": "Why use GitHub in RStudio?",
     "section": "Conclusion",
     "text": "Conclusion\nTo some this may seem like more to set up, and sure it may be a little more than just hitting save. The most important takeaway is that some type of file organization method needs to be implemented and sooner rather than later.\n\nThe benefits of using GitHub:\n\n\nHaving that central cloud based storage of files and projects.\nCollaborating with others can be easier with this method as everyone would need to have an account and be authorized to contribute to the repository, opposed to emailing or sending files back and forth.\nBranches for not losing your main files when making edits.\nAccess to GitHub Pages for projects (like this blog).\nBuild a portfolio.\nLearn how Git and GitHub works!"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "text\n\n\nsentiment\n\n\nSQL\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/test/index.html",
+    "href": "projects/test/index.html",
+    "title": "rblogr",
+    "section": "",
+    "text": "test"
+  },
+  {
+    "objectID": "projects/twitter/index.html",
+    "href": "projects/twitter/index.html",
+    "title": "Twitter Project",
+    "section": "",
+    "text": "Project using R and postgreSQL to conduct an analysis on Tweets extracted with R via the Twitter API."
   }
 ]

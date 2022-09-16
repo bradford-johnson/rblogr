@@ -8,5 +8,11 @@
       "/posts/github/index.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/twitter/index.html"
+    ]
   }
 ]

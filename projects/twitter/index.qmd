@@ -1,0 +1,12 @@
+---
+title: "Twitter Project"
+author: "Bradford Johnson"
+date: "2022-09-16"
+categories: [text, sentiment, SQL, R]
+---
+
+## Twitter Analysis Project
+
+Project using R and postgreSQL to conduct an analysis on Tweets extracted with R via the Twitter API.
+
+![](jeremy-bezanger-EXDRSDPJbv4-unsplash.jpg)
