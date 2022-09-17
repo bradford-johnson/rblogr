@@ -33,6 +33,10 @@ library(rvest)
 library(lubridate)
 ```
 
+If you want to see the documentation for any of these packages then click their hex image.
+
+[![rvest](https://github.com/rstudio/hex-stickers/blob/master/thumbs/rvest.png?raw=true)](https://rvest.tidyverse.org/) [![tidyverse](https://github.com/rstudio/hex-stickers/blob/master/thumbs/tidyverse.png?raw=true)](https://tidyverse.tidyverse.org/) [![lub](https://github.com/rstudio/hex-stickers/blob/master/thumbs/lubridate.png?raw=true)](https://lubridate.tidyverse.org/)
+
 ## Setting the Parameters
 
 Next you will set up the parameters so `rvest` knows where to get the data from. The `html_nodes` can be found using the browser extension `SelectorGadget` found [here](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb). Using this extension you can highlight what you want to web scrape and copy/paste the html nodes from `SelectorGadget`.

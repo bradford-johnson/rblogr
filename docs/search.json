@@ -214,13 +214,13 @@
     "href": "posts/webscrape/index.html#creating-the-data-frame",
     "title": "Web Scraping with rvest",
     "section": "Creating the Data Frame",
-    "text": "Creating the Data Frame\nAfter getting all the data you will want to put it into a data frame to work with it, so you will then use the data.frame() function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current data as a column so I know when I collected this data.\n# put both game and player data into a data frame\ndf = data.frame(game, current_players) \n# get current date\ncurrent_date <- as_datetime(Sys.Date())\n# update data frame with mutated column that adds current_date\ndf <- df %>% \n  mutate(date = current_date)\nNow lets see the first 6 rows of our new data frame that we crafted using rvest.\n\nhead(df)\n\n                              game current_players       date\n1 Counter-Strike: Global Offensive         508,906 2022-09-17\n2                           Dota 2         435,908 2022-09-17\n3                         Lost Ark         189,549 2022-09-17\n4                     Apex Legends         127,003 2022-09-17\n5                        Destiny 2         111,435 2022-09-17\n6                  Team Fortress 2          97,643 2022-09-17"
+    "text": "Creating the Data Frame\nAfter getting all the data you will want to put it into a data frame to work with it, so you will then use the data.frame() function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current data as a column so I know when I collected this data.\n# put both game and player data into a data frame\ndf = data.frame(game, current_players) \n# get current date\ncurrent_date <- as_datetime(Sys.Date())\n# update data frame with mutated column that adds current_date\ndf <- df %>% \n  mutate(date = current_date)\nNow lets see the first 6 rows of our new data frame that we crafted using rvest.\n\nhead(df)\n\n                              game current_players       date\n1 Counter-Strike: Global Offensive         486,312 2022-09-17\n2                           Dota 2         419,459 2022-09-17\n3                         Lost Ark         189,093 2022-09-17\n4                     Apex Legends         124,554 2022-09-17\n5                        Destiny 2         110,202 2022-09-17\n6                  Team Fortress 2          97,110 2022-09-17"
   },
   {
     "objectID": "posts/webscrape/index.html#install-and-load-packages",
     "href": "posts/webscrape/index.html#install-and-load-packages",
     "title": "Web Scraping with rvest",
     "section": "Install and Load Packages",
-    "text": "Install and Load Packages\ninstall.packages(\"tidyverse\")\ninstall.packages(\"rvest\")\ninstall.packages(\"lubridate\")\n\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(lubridate)"
+    "text": "Install and Load Packages\ninstall.packages(\"tidyverse\")\ninstall.packages(\"rvest\")\ninstall.packages(\"lubridate\")\n\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(lubridate)\nIf you want to see the documentation for any of these packages then click their hex image."
   }
 ]
