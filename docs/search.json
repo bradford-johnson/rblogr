@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "SQL\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\nformattable\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\njanitor\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
+    "text": "web scraping\n\n\nrvest\n\n\n\n\n\n\n\n\n\n\n\nSep 18, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nSQL\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\nformattable\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\njanitor\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pipes/index.html",
@@ -194,5 +194,33 @@
     "title": "Revenue Growth Model",
     "section": "",
     "text": "Business Analysis for Lariat Rent-A-Car\n\nExamined and cleaned historical sales data using Excel (VLookUp, pivot tables and t-tests)\nFacilitated exploratory data analysis and assessed by KPI performance.\nDeveloped and presented models that showcased a 40% increase in profits."
+  },
+  {
+    "objectID": "posts/webscrape/index.html",
+    "href": "posts/webscrape/index.html",
+    "title": "Web Scraping with rvest",
+    "section": "",
+    "text": "Using the rvest package you can get the data you need from webpages and quickly use it for analysis.\n\nBelow I will show a simple script using the rvest, lubridate and tidyverse packages that can scrape us some data from Steam’s game stats page. Steam is a video game distribution service, and we will scrape a couple columns from their live Top games by current player count table.\nFirst of course install and load the packages, if you already have any of these packages then you just need to load them."
+  },
+  {
+    "objectID": "posts/webscrape/index.html#setting-the-parameters",
+    "href": "posts/webscrape/index.html#setting-the-parameters",
+    "title": "Web Scraping with rvest",
+    "section": "Setting the Parameters",
+    "text": "Setting the Parameters\nNext you will set up the parameters so rvest knows where to get the data from. The html_nodes can be found using the browser extension SelectorGadget found here. Using this extension you can highlight what you want to web scrape and copy/paste the html nodes from SelectorGadget.\n# link to get data from\nlink = \"https://store.steampowered.com/stats/\" \n# read webpage at the above link\npage = read_html(link) \n# scrape top 100 games by current players\ngame = page %>% \n  html_nodes(\".gameLink\") %>% \n  html_text()  \n# scrape number of players for each game \ncurrent_players = page %>% \n  html_nodes(\"td:nth-child(1) .currentServers\") %>% \n  html_text()"
+  },
+  {
+    "objectID": "posts/webscrape/index.html#creating-the-data-frame",
+    "href": "posts/webscrape/index.html#creating-the-data-frame",
+    "title": "Web Scraping with rvest",
+    "section": "Creating the Data Frame",
+    "text": "Creating the Data Frame\nAfter getting all the data you will want to put it into a data frame to work with it, so you will then use the data.frame() function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current data as a column so I know when I collected this data.\n# put both game and player data into a data frame\ndf = data.frame(game, current_players) \n# get current date\ncurrent_date <- as_datetime(Sys.Date())\n# update data frame with mutated column that adds current_date\ndf <- df %>% \n  mutate(date = current_date)\nNow lets see the first 6 rows of our new data frame that we crafted using rvest.\n\nhead(df)\n\n                              game current_players       date\n1 Counter-Strike: Global Offensive         508,906 2022-09-17\n2                           Dota 2         435,908 2022-09-17\n3                         Lost Ark         189,549 2022-09-17\n4                     Apex Legends         127,003 2022-09-17\n5                        Destiny 2         111,435 2022-09-17\n6                  Team Fortress 2          97,643 2022-09-17"
+  },
+  {
+    "objectID": "posts/webscrape/index.html#install-and-load-packages",
+    "href": "posts/webscrape/index.html#install-and-load-packages",
+    "title": "Web Scraping with rvest",
+    "section": "Install and Load Packages",
+    "text": "Install and Load Packages\ninstall.packages(\"tidyverse\")\ninstall.packages(\"rvest\")\ninstall.packages(\"lubridate\")\n\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(lubridate)"
   }
 ]

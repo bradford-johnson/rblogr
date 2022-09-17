@@ -1,0 +1,98 @@
+---
+title: "Web Scraping with rvest"
+author: "Bradford Johnson"
+date: "2022-09-18"
+categories: [web scraping, rvest]
+---
+
+## **How to Web Scrape with rvest**
+
+Using the `rvest` package you can get the data you need from webpages and quickly use it for analysis.
+
+![](josh-berendes-2zcemW2Oy8Y-unsplash.jpg)
+
+Below I will show a simple script using the `rvest`, `lubridate` and `tidyverse` packages that can scrape us some data from [Steam's](https://store.steampowered.com/stats/) game stats page. Steam is a video game distribution service, and we will scrape a couple columns from their live *Top games by current player count* table.
+
+First of course install and load the packages, if you already have any of these packages then you just need to load them.
+
+## Install and Load Packages
+
+``` r
+install.packages("tidyverse")
+install.packages("rvest")
+install.packages("lubridate")
+
+library(tidyverse)
+library(rvest)
+library(lubridate)
+```
+
+```{r include=FALSE}
+library(tidyverse)
+library(rvest)
+library(lubridate)
+```
+
+## Setting the Parameters
+
+Next you will set up the parameters so `rvest` knows where to get the data from. The `html_nodes` can be found using the browser extension `SelectorGadget` found [here](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb). Using this extension you can highlight what you want to web scrape and copy/paste the html nodes from `SelectorGadget`.
+
+``` r
+# link to get data from
+link = "https://store.steampowered.com/stats/" 
+# read webpage at the above link
+page = read_html(link) 
+# scrape top 100 games by current players
+game = page %>% 
+  html_nodes(".gameLink") %>% 
+  html_text()  
+# scrape number of players for each game 
+current_players = page %>% 
+  html_nodes("td:nth-child(1) .currentServers") %>% 
+  html_text() 
+```
+
+```{r include=FALSE}
+# link to get data from
+link = "https://store.steampowered.com/stats/" 
+# read webpage at the above link
+page = read_html(link) 
+# scrape top 100 games by current players
+game = page %>% 
+  html_nodes(".gameLink") %>% 
+  html_text()  
+# scrape number of players for each game 
+current_players = page %>% 
+  html_nodes("td:nth-child(1) .currentServers") %>% 
+  html_text() 
+```
+
+## Creating the Data Frame
+
+After getting all the data you will want to put it into a data frame to work with it, so you will then use the `data.frame()` function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current data as a column so I know when I collected this data.
+
+``` r
+# put both game and player data into a data frame
+df = data.frame(game, current_players) 
+# get current date
+current_date <- as_datetime(Sys.Date())
+# update data frame with mutated column that adds current_date
+df <- df %>% 
+  mutate(date = current_date)
+```
+
+```{r include=FALSE}
+# put both game and player data into a data frame
+df = data.frame(game, current_players) 
+# get current date
+current_date <- as_datetime(Sys.Date())
+# update data frame with mutated column that adds current_date
+df <- df %>% 
+  mutate(date = current_date)
+```
+
+Now lets see the first 6 rows of our new data frame that we crafted using `rvest`.
+
+```{r warning=FALSE,message=FALSE,error=FALSE}
+head(df)
+```
