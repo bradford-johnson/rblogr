@@ -230,7 +230,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="creating-the-data-frame" class="level2">
 <h2 class="anchored" data-anchor-id="creating-the-data-frame">Creating the Data Frame</h2>
-<p>After getting all the data you will want to put it into a data frame to work with it, so you will then use the <code>data.frame()</code> function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current data as a column so I know when I collected this data.</p>
+<p>After getting all the data you will want to put it into a data frame to work with it, so you will then use the <code>data.frame()</code> function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current date as a column so I know when I collected this data.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># put both game and player data into a data frame</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(game, current_players) </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get current date</span></span>
@@ -243,12 +243,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                              game current_players       date
-1 Counter-Strike: Global Offensive         486,312 2022-09-17
-2                           Dota 2         419,459 2022-09-17
-3                         Lost Ark         189,093 2022-09-17
-4                     Apex Legends         124,554 2022-09-17
-5                        Destiny 2         110,202 2022-09-17
-6                  Team Fortress 2          97,110 2022-09-17</code></pre>
+1 Counter-Strike: Global Offensive       1,070,522 2022-09-18
+2                           Dota 2         831,650 2022-09-18
+3              PUBG: BATTLEGROUNDS         437,246 2022-09-18
+4                     Apex Legends         436,491 2022-09-18
+5                         Lost Ark         223,308 2022-09-18
+6               Grand Theft Auto V         163,882 2022-09-18</code></pre>
 </div>
 </div>
 

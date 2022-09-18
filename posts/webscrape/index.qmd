@@ -73,7 +73,7 @@ current_players = page %>%
 
 ## Creating the Data Frame
 
-After getting all the data you will want to put it into a data frame to work with it, so you will then use the `data.frame()` function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current data as a column so I know when I collected this data.
+After getting all the data you will want to put it into a data frame to work with it, so you will then use the `data.frame()` function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current date as a column so I know when I collected this data.
 
 ``` r
 # put both game and player data into a data frame
