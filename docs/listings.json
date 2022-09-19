@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/rtweet/index.html",
       "/posts/webscrape/index.html",
       "/posts/connect_database/index.html",
       "/posts/percents/index.html",

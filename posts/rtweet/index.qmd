@@ -1,0 +1,32 @@
+---
+title: "Tweet Scraping with `rtweet`"
+author: "Bradford Johnson"
+date: "2022-09-19"
+categories: [rtweet]
+---
+
+## **'Scraping' Twitter**
+
+Tons of data is created on social media, and using social media can be a great source for businesses to see how their customers may feel about the goods or services they offer, advertise more products or intervene when a customer had a bad experience.
+
+![](jeremy-bezanger-Jm1YUfYjpHI-unsplash.jpg)
+
+You can access data from Twitter by making a [Twitter Developer's Account](https://developer.twitter.com/en) and by using the Twitter API. After making a developers account it is very easy to get the data using the `rtweet` package. Click on the hex `rtweet` logo to access the documentation.
+
+[![rtweet](rtweet.png)](https://rvest.tidyverse.org/)
+First you need to make sure you default browser is open and you are logged into your Twitter account. After you do this make sure to install the `rtweet` package and load it in `RStudio`.
+
+```{r eval=FALSE}
+install.packages("rtweet")
+library(rtweet)
+```
+
+After installing the package and loading it, you can use this code to set up your authentication and the `search_tweets()` function can retrieve Tweet data based on your parameters.
+
+In this call of `search_tweets()` it will search for Tweets that contain "rocket league", `n = 100` means it will return 100 tweets, `include_rts = FALSE` means that it will **not** include and return Retweets, and finally `lang = "en"` means it will only return Tweets in English.
+
+```{r eval=FALSE}
+auth_setup_default()
+auth_has_default()
+rt <- search_tweets("rocket league", n = 100, include_rts = FALSE, lang = "en")
+```
