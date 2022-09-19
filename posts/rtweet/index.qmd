@@ -5,15 +5,18 @@ date: "2022-09-19"
 categories: [rtweet]
 ---
 
-## **'Scraping' Twitter**
+## **Scraping Twitter**
 
 Tons of data is created on social media, and using social media can be a great source for businesses to see how their customers may feel about the goods or services they offer, advertise more products or intervene when a customer had a bad experience.
 
 ![](jeremy-bezanger-Jm1YUfYjpHI-unsplash.jpg)
 
-You can access data from Twitter by making a [Twitter Developer's Account](https://developer.twitter.com/en) and by using the Twitter API. After making a developers account it is very easy to get the data using the `rtweet` package. Click on the hex `rtweet` logo to access the documentation.
+You can access data from Twitter by making a [Twitter Developer's Account](https://developer.twitter.com/en) and by using the Twitter API. After making a developers account it is very easy to get the data using the `rtweet` package.
 
-[![rtweet](rtweet.png)](https://rvest.tidyverse.org/)
+Click on the hex `rtweet` logo to access the documentation.
+
+[![](rtweet.png){width="200"}](https://rvest.tidyverse.org/)
+
 First you need to make sure you default browser is open and you are logged into your Twitter account. After you do this make sure to install the `rtweet` package and load it in `RStudio`.
 
 ```{r eval=FALSE}
