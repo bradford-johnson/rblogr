@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "rtweet\n\n\n\n\n\n\n\n\n\n\n\nSep 19, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nweb scraping\n\n\nrvest\n\n\n\n\n\n\n\n\n\n\n\nSep 18, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nSQL\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\nformattable\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\njanitor\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
+    "text": "functions\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 24, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nrtweet\n\n\n\n\n\n\n\n\n\n\n\nSep 19, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nweb scraping\n\n\nrvest\n\n\n\n\n\n\n\n\n\n\n\nSep 18, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nSQL\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\nformattable\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\njanitor\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/clean_names/index.html",
@@ -75,6 +75,34 @@
     "title": "Connect to a postgreSQL Database",
     "section": "Disconnect from Database",
     "text": "Disconnect from Database\nOnce you have run the query you can then clean the query and disconnect from the database using these functions and arguments respectively.\n# clear query\ndbClearResult(res)\n# disconnect from database\ndbDisconnect(con)"
+  },
+  {
+    "objectID": "posts/functions/index.html",
+    "href": "posts/functions/index.html",
+    "title": "Functions in R",
+    "section": "",
+    "text": "Functions are quite important to conducting analysis, and they are not very hard to begin learning."
+  },
+  {
+    "objectID": "posts/functions/index.html#r-script",
+    "href": "posts/functions/index.html#r-script",
+    "title": "Functions in R",
+    "section": "R Script",
+    "text": "R Script\nWhen learning how to write functions, I learned to write them from an already existing R script.\nFor example here is an existing block of code that I use for removing outliers from data.\nQ = quantile(outlier_df$var1.1, probs = c(.25,.75), na.rm = FALSE) \n\niqr = IQR(outlier_df$var1.1)  \n\nup <-  Q[2]+1.5*iqr # Upper Range  \nlow <- Q[1]-1.5*iqr # Lower Range  \n\nno_outliers_p <- outlier_df %>%  \n  filter(var1.1 > low & var1.1 < up)  \nThis is normal R code, and it is first getting the 1st and 3rd quartiles of a numeric variable. It then gets the IQR and subsequently gets the upper and lower ranges then filters the data, removing the outliers."
+  },
+  {
+    "objectID": "posts/functions/index.html#r-function",
+    "href": "posts/functions/index.html#r-function",
+    "title": "Functions in R",
+    "section": "R Function",
+    "text": "R Function\nOne thing I have heard recently in my learning is that you should not repeat yourself. This means you should not be writing the same lines of code more than once. If you do, then write a function.\nI saw this as an opportunity to learn even more and challenge myself, so I decided to create my first function to help me with removing outliers.\nstrain <- function(x,column_q,column) {\n\n  Q <- quantile(x[[column_q]], probs = c(.25,.75), na.rm = FALSE)\n  iqr <- IQR(x[[column_q]])\n\n  up <- Q[2]+1.5*iqr\n  low <- Q[1]-1.5*iqr\n\n  strained_df <- x %>%\n    filter(column > low & column < up)\n\n  return(strained_df)\n}\nThe function and script look quite similar except in the function we are creating a more “generic” script, that will run the same code the same way, for any data frame you input. This function is also going to be part of my own R Package, called strainerr (because it “strains” out unwanted data)."
+  },
+  {
+    "objectID": "posts/functions/index.html#arguments",
+    "href": "posts/functions/index.html#arguments",
+    "title": "Functions in R",
+    "section": "Arguments",
+    "text": "Arguments\nMy function calls for 3 arguments:\n\n\n\n\nArgument\n\n\n\n\n\nx\nA data frame\n\n\ncolumn_q\nThe column name in “quotes”\n\n\ncolumn\nThe column name\n\n\n\n\nThe strain() function takes the arguments in this format:\nstrain(x, column_q, column)\nAn example with real arguments would look like this:\nstrain(data_df, \"ages\", ages)\nThis will remove outliers from the ages column in the data_df data frame."
   },
   {
     "objectID": "posts/github/index.html",

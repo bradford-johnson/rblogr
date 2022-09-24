@@ -1,0 +1,79 @@
+---
+title: "Functions in R"
+author: "Bradford Johnson"
+date: "2022-09-24"
+image: "shahadat-rahman-gnyA8vd3Otc-unsplash.jpg"
+categories: [functions, outliers]
+---
+
+## **Writing a Function in R**
+
+Functions are quite important to conducting analysis, and they are not very hard to begin learning.
+
+## R Script
+
+When learning how to write functions, I learned to write them from an already existing R script.
+
+For example here is an existing block of code that I use for removing outliers from data.
+
+``` r
+Q = quantile(outlier_df$var1.1, probs = c(.25,.75), na.rm = FALSE) 
+
+iqr = IQR(outlier_df$var1.1)  
+
+up <-  Q[2]+1.5*iqr # Upper Range  
+low <- Q[1]-1.5*iqr # Lower Range  
+
+no_outliers_p <- outlier_df %>%  
+  filter(var1.1 > low & var1.1 < up)  
+```
+
+This is normal `R` code, and it is first getting the 1st and 3rd quartiles of a numeric variable. It then gets the IQR and subsequently gets the upper and lower ranges then filters the data, removing the outliers.
+
+## R Function
+
+One thing I have heard recently in my learning is that you should not repeat yourself. This means you should not be writing the same lines of code more than once. If you do, then write a function.
+
+I saw this as an opportunity to learn even more and challenge myself, so I decided to create my first function to help me with removing outliers.
+
+``` r
+strain <- function(x,column_q,column) {
+
+  Q <- quantile(x[[column_q]], probs = c(.25,.75), na.rm = FALSE)
+  iqr <- IQR(x[[column_q]])
+
+  up <- Q[2]+1.5*iqr
+  low <- Q[1]-1.5*iqr
+
+  strained_df <- x %>%
+    filter(column > low & column < up)
+
+  return(strained_df)
+}
+```
+
+The function and script look quite similar except in the function we are creating a more *"generic"* script, that will run the same code the same way, for any data frame you input. This function is also going to be part of my own `R Package`, called `strainerr` (because it *"strains"* out unwanted data).
+
+## Arguments
+
+My function calls for 3 arguments:
+
+> | Argument |                             |
+> |----------|-----------------------------|
+> | x        | A data frame                |
+> | column_q | The column name in "quotes" |
+> | column   | The column name             |
+
+The `strain()` function takes the arguments in this format:
+
+``` r
+strain(x, column_q, column)
+```
+
+An example with real arguments would look like this:
+
+``` r
+strain(data_df, "ages", ages)
+```
+
+This will remove outliers from the ages column in the data_df data frame.

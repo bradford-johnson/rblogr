@@ -1,0 +1,14 @@
+{
+  "hash": "94624680ac08f7d84dda1b1163ab224b",
+  "result": {
+    "markdown": "---\ntitle: \"Functions in R\"\nauthor: \"Bradford Johnson\"\ndate: \"2022-09-16\"\nimage: \"shahadat-rahman-gnyA8vd3Otc-unsplash.jpg\"\ncategories: [functions, outliers]\n---\n\n\n## **Making Functions in R**\n\nFunctions are quite important to conducting analysis, and they are not very hard to begin learning.\n\n## Writing a Function\n\n### R Script\n\nWhen learning how to write functions, I learned to write them from an already existing R script.\n\nFor example here is an existing block of code that I use for removing outliers from data.\n\n``` r\nQ = quantile(outlier_df$var1.1, probs = c(.25,.75), na.rm = FALSE) \n\niqr = IQR(outlier_df$var1.1)  \n\nup <-  Q[2]+1.5*iqr # Upper Range  \nlow <- Q[1]-1.5*iqr # Lower Range  \n\nno_outliers_p <- outlier_df %>%  \n  filter(var1.1 > low & var1.1 < up)  \n```\n\nThis is normal `R` code, and it is first getting the 1st and 3rd quartiles of a numeric variable. It then gets the IQR and subsequently gets the upper and lower ranges then filters the data, removing the outliers.\n\n### R Function\n\nOne thing I have heard recently in my learning is that you should not repeat yourself. This means you should not be writing the same lines of code more than once. If you do, then write a function. I saw this as an opportunity to learn even more and challenge myself, so I decided to create a function for removing outliers.\n\n``` r\nstrain <- function(x,column_q,column) {\n\n  Q <- quantile(x[[column_q]], probs = c(.25,.75), na.rm = FALSE)\n  iqr <- IQR(x[[column_q]])\n\n  up <- Q[2]+1.5*iqr\n  low <- Q[1]-1.5*iqr\n\n  strained_df <- x %>%\n    filter(column > low & column < up)\n\n  return(strained_df)\n}\n```\n\nThis function is also going to be part of my own `R Package`, called `strainerr` (because it \"strains\" out unwanted data).\n\n### Arguments\n\nMy function calls for 3 arguments:\n\n> 1.  x\tA data frame\n> 2.  column_q\tThe column name in \"quotes\"\n> 3.  column\tThe column name\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(strainerr)\n?strain()\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nstarting httpd help server ... done\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
