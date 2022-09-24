@@ -14,58 +14,30 @@
     "text": "rtweet\n\n\n\n\n\n\n\n\n\n\n\nSep 19, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nweb scraping\n\n\nrvest\n\n\n\n\n\n\n\n\n\n\n\nSep 18, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nSQL\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\nformattable\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\njanitor\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ncleaning\n\n\noutliers\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ngithub\n\n\nprojects\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/pipes/index.html",
-    "href": "posts/pipes/index.html",
-    "title": "This is not a Pipe?",
-    "section": "",
-    "text": "Test post"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "I have been practicing with Quarto for a couple of weeks now, and have enjoyed it so much! Quarto has created many more opportunities for myself and the types of deliverable I can create. If you are using R or Python and have not gotten to use Quarto yet, then this is your sign to look into how awesome it is!\nClick the image below to go to Quarto’s Website"
-  },
-  {
-    "objectID": "posts/github/index.html",
-    "href": "posts/github/index.html",
-    "title": "Why use GitHub with RStudio?",
-    "section": "",
-    "text": "Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner…\n\nAt first when I was learning R, I would only create R Script files and then save each plot as a .png. As time went on I discovered R Notebooks and R Markdown, these where perfect for practicing my R and having a single file with multiple different R Chunks that I could set up for each analysis stage. It was perfect because the file when saved would save a .html version, so it was a great way to work on and share projects.\nMore recently my projects became bigger and so did the files, but my local folder on my desktop named “Data Science” became more filled. At the same time I was creating my first GitHub account so I uploaded some of these R projects into repositories. Once I would make changes locally I would then replace the respective file on GitHub. This is the extent I used GitHub to, as a “Google Drive” in a way.\nHowever I was looking through RStudio’s settings and noticed the Git/SVN option: \nAfter clicking the RStudio link I quickly learned you can connect RStudio to GitHub. I watched a few videos and I was able to connect the two together. I did find that having the desktop GitHub app helped with the initial set up and cloning your repositories.\nNow when making a project in R, I create a repository with it and can push / pull project changes live. I ended up creating a new GitHub account and starting fresh with this new organization. This is how I currently organize my GitHub:\n\n\nProjects get their own repositories.\n\nEach one gets their own ReadMe files that describes the project.\n\nSmaller files like individual R Scripts or R Notebooks go into my R repository, .SQL files go into the SQL repository and so on.\n\nEach main repository like R or SQL gets a ReadMe for describing my work in general and other details.\n\n\n\nIn addition to this, I keep a clone of each repository on my local machine as a backup, and as a way to edit and push/pull updates from GitHub.\nHaving a repository for each project is great as you can also have a GitHub Pages site for each of them to share your code, or even a deliverable. Using Quarto and GitHub Pages is such a smooth process to rapidly deploy reproducible deliverables for stakeholders. When setting up the Pages with GitHub it will automatically update the website with a push to the main branch, meaning I can update my website from RStudio."
-  },
-  {
-    "objectID": "posts/outliers/index.html",
-    "href": "posts/outliers/index.html",
-    "title": "Identifying and Removing Outliers",
-    "section": "",
-    "text": "Outliers can distort a dataset, but how do you find and remove them?"
-  },
-  {
     "objectID": "posts/clean_names/index.html",
     "href": "posts/clean_names/index.html",
-    "title": "Cleaning up Column Names with Janitor",
+    "title": "Cleaning up Column Names with janitor",
     "section": "",
-    "text": "Are they called column headers or column names? Perhaps it depends, but working with dirty ones can be avoided…\n\nWorking with dirty data is part of being a data analyst, and the janitor package is great because it can help clean up the column names so they are easier to work with. I will load in the readr package to import a hand crafted .csv that I made as an example. I will also load in the dplyr package so I can pipe the data into functions.\n\nClick on the hex Janitor logo to see the documentation"
+    "text": "Are they called column headers or column names? Perhaps it depends, but working with dirty ones can be avoided…\nWorking with dirty data is part of being a data analyst, and the janitor package is great because it can help clean up the column names so they are easier to work with. I will load in the readr package to import a hand crafted .csv that I made as an example. I will also load in the dplyr package so I can pipe the data into functions.\n\nClick on the hex janitor logo to see the documentation"
   },
   {
     "objectID": "posts/clean_names/index.html#the-packages",
     "href": "posts/clean_names/index.html#the-packages",
-    "title": "Cleaning up Column Names with Janitor",
+    "title": "Cleaning up Column Names with janitor",
     "section": "The Packages",
     "text": "The Packages\nHere is how you install and load the packages.\n\nInstall:\n\ninstall.packages(\"janitor\")\ninstall.packages(\"readr\")\ninstall.packages(\"dplyr\")\n\nLoad:\n\nlibrary(janitor)\nlibrary(readr)\nlibrary(dplyr)"
   },
   {
     "objectID": "posts/clean_names/index.html#importing-a-.csv-file",
     "href": "posts/clean_names/index.html#importing-a-.csv-file",
-    "title": "Cleaning up Column Names with Janitor",
+    "title": "Cleaning up Column Names with janitor",
     "section": "Importing a .csv File",
     "text": "Importing a .csv File\nImporting a .csv file is quite simple and using the readr package, the read_csv(\" \") function will let you import a .csv as a data frame and you can use <- or = to assign the data frame a name.\n\n# read in .csv\ndirty_df <- read_csv('janitor-example.csv')\n\n\nDirty Column Names\nHere is what the dirty column names on this data frame look like. The capitalization is all wild, there are spaces between characters, some of the names are not concise…\n\ndirty_df %>% \n  head()\n\n# A tibble: 6 x 3\n  `DAY OF THE WEEK` `TEMP F` `WEaThEr CONDITIONS`\n  <chr>                <dbl> <chr>               \n1 Monday                  98 sunny               \n2 Tuesday                 95 sunny               \n3 Wednesday               70 cloudy              \n4 Thursday                85 sunny               \n5 Friday                  83 sunny               \n6 Saturday                85 sunny"
   },
   {
     "objectID": "posts/clean_names/index.html#cleaning-column-names",
     "href": "posts/clean_names/index.html#cleaning-column-names",
-    "title": "Cleaning up Column Names with Janitor",
+    "title": "Cleaning up Column Names with janitor",
     "section": "Cleaning Column Names",
     "text": "Cleaning Column Names\nNow using the clean_names() function from the janitor package along with some mutate() functions I will load in the same data frame.\n\n# read in csv but with janitor and dplyr functions\nclean_df <- read_csv('janitor-example.csv') %>%\n  clean_names() %>%\n  mutate(weather_condition = w_ea_th_er_conditions) %>%\n  mutate(avg_temp_f = temp_f) %>%\n  mutate(weekday = day_of_the_week) %>%\n  select(weekday, avg_temp_f, weather_condition)\n\n\nCleaned Column Names\nHere is how the cleaned data frame looks. The column names are now easier to work with, and much better understood.\n\nclean_df %>%\n  head()\n\n# A tibble: 6 x 3\n  weekday   avg_temp_f weather_condition\n  <chr>          <dbl> <chr>            \n1 Monday            98 sunny            \n2 Tuesday           95 sunny            \n3 Wednesday         70 cloudy           \n4 Thursday          85 sunny            \n5 Friday            83 sunny            \n6 Saturday          85 sunny"
   },
@@ -105,6 +77,34 @@
     "text": "Disconnect from Database\nOnce you have run the query you can then clean the query and disconnect from the database using these functions and arguments respectively.\n# clear query\ndbClearResult(res)\n# disconnect from database\ndbDisconnect(con)"
   },
   {
+    "objectID": "posts/github/index.html",
+    "href": "posts/github/index.html",
+    "title": "Why use GitHub with RStudio?",
+    "section": "",
+    "text": "Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner…\nAt first when I was learning R, I would only create R Script files and then save each plot as a .png. As time went on I discovered R Notebooks and R Markdown, these where perfect for practicing my R and having a single file with multiple different R Chunks that I could set up for each analysis stage. It was perfect because the file when saved would save a .html version, so it was a great way to work on and share projects.\nMore recently my projects became bigger and so did the files, but my local folder on my desktop named “Data Science” became more filled. At the same time I was creating my first GitHub account so I uploaded some of these R projects into repositories. Once I would make changes locally I would then replace the respective file on GitHub. This is the extent I used GitHub to, as a “Google Drive” in a way.\nHowever I was looking through RStudio’s settings and noticed the Git/SVN option: \nAfter clicking the RStudio link I quickly learned you can connect RStudio to GitHub. I watched a few videos and I was able to connect the two together. I did find that having the desktop GitHub app helped with the initial set up and cloning your repositories.\nNow when making a project in R, I create a repository with it and can push / pull project changes live. I ended up creating a new GitHub account and starting fresh with this new organization. This is how I currently organize my GitHub:\n\n\nProjects get their own repositories.\n\nEach one gets their own ReadMe files that describes the project.\n\nSmaller files like individual R Scripts or R Notebooks go into my R repository, .SQL files go into the SQL repository and so on.\n\nEach main repository like R or SQL gets a ReadMe for describing my work in general and other details.\n\n\n\nIn addition to this, I keep a clone of each repository on my local machine as a backup, and as a way to edit and push/pull updates from GitHub.\nHaving a repository for each project is great as you can also have a GitHub Pages site for each of them to share your code, or even a deliverable. Using Quarto and GitHub Pages is such a smooth process to rapidly deploy reproducible deliverables for stakeholders. When setting up the Pages with GitHub it will automatically update the website with a push to the main branch, meaning I can update my website from RStudio."
+  },
+  {
+    "objectID": "posts/github/index.html#using-git-in-rstudio",
+    "href": "posts/github/index.html#using-git-in-rstudio",
+    "title": "Why use GitHub with RStudio?",
+    "section": "Using Git in RStudio",
+    "text": "Using Git in RStudio\nIn RStudio you can access the Git tab once you are connected, and page will add records as your make changes to the files. You can check them off and click the green arrow to push the changes to GitHub.\n\nYou can also hit the Commit button to then see the below example:\n\n\nSteps to a Push\n\n\nCheck off all the changes on the left side.\nEnter a commit message.\nPress the commit button on the bottom right, a window like this should then pop up. \nClose out of the pop up window, then hit the green up arrow labeled “Push” and you have done a push.\n\nDone\n\n\n\n\nSteps to a Pull\n\n\nHit the blue down arrow labeled “Pull”\n\nDone"
+  },
+  {
+    "objectID": "posts/github/index.html#conclusion",
+    "href": "posts/github/index.html#conclusion",
+    "title": "Why use GitHub with RStudio?",
+    "section": "Conclusion",
+    "text": "Conclusion\nTo some this may seem like more to set up, and sure it may be a little more than just hitting save. The most important takeaway is that some type of file organization method needs to be implemented and sooner rather than later.\n\nThe benefits of using GitHub:\n\n\nHaving that central cloud based storage of files and projects.\nCollaborating with others can be easier with this method as everyone would need to have an account and be authorized to contribute to the repository, opposed to emailing or sending files back and forth.\nBranches for not losing your main files when making edits.\nAccess to GitHub Pages for projects (like this blog).\nBuild a portfolio.\nLearn how Git and GitHub works!"
+  },
+  {
+    "objectID": "posts/outliers/index.html",
+    "href": "posts/outliers/index.html",
+    "title": "Identifying and Removing Outliers",
+    "section": "",
+    "text": "Outliers can distort a dataset, but how do you find and remove them?"
+  },
+  {
     "objectID": "posts/outliers/index.html#what-are-outliers",
     "href": "posts/outliers/index.html#what-are-outliers",
     "title": "Identifying and Removing Outliers",
@@ -140,67 +140,32 @@
     "text": "With Outliers vs Without Outliers\n\n# patchwork to show plots\noutlier_p / no_outliers_p"
   },
   {
-    "objectID": "posts/github/index.html#using-git-in-rstudio",
-    "href": "posts/github/index.html#using-git-in-rstudio",
-    "title": "Why use GitHub with RStudio?",
-    "section": "Using Git in RStudio",
-    "text": "Using Git in RStudio\nIn RStudio you can access the Git tab once you are connected, and page will add records as your make changes to the files. You can check them off and click the green arrow to push the changes to GitHub.\n\nYou can also hit the Commit button to then see the below example:\n\n\nSteps to a Push\n\n\nCheck off all the changes on the left side.\nEnter a commit message.\nPress the commit button on the bottom right, a window like this should then pop up. \nClose out of the pop up window, then hit the green up arrow labeled “Push” and you have done a push.\n\nDone\n\n\n\n\nSteps to a Pull\n\n\nHit the blue down arrow labeled “Pull”\n\nDone"
-  },
-  {
-    "objectID": "posts/github/index.html#conclusion",
-    "href": "posts/github/index.html#conclusion",
-    "title": "Why use GitHub with RStudio?",
-    "section": "Conclusion",
-    "text": "Conclusion\nTo some this may seem like more to set up, and sure it may be a little more than just hitting save. The most important takeaway is that some type of file organization method needs to be implemented and sooner rather than later.\n\nThe benefits of using GitHub:\n\n\nHaving that central cloud based storage of files and projects.\nCollaborating with others can be easier with this method as everyone would need to have an account and be authorized to contribute to the repository, opposed to emailing or sending files back and forth.\nBranches for not losing your main files when making edits.\nAccess to GitHub Pages for projects (like this blog).\nBuild a portfolio.\nLearn how Git and GitHub works!"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "My Projects",
-    "section": "",
-    "text": "text\n\n\nsentiment\n\n\nSQL\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nbusiness\n\n\nexcel\n\n\nmodel\n\n\n\n\n\n\n\n\n\n\n\nAug 23, 2022\n\n\nBradford Johnson\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/test/index.html",
-    "href": "projects/test/index.html",
-    "title": "rblogr",
-    "section": "",
-    "text": "test"
-  },
-  {
-    "objectID": "projects/twitter/index.html",
-    "href": "projects/twitter/index.html",
-    "title": "Twitter Project",
-    "section": "",
-    "text": "Project using R and postgreSQL to conduct an analysis on Tweets extracted with R via the Twitter API."
-  },
-  {
     "objectID": "posts/percents/index.html",
     "href": "posts/percents/index.html",
-    "title": "Adding Percent Signs with Formattable",
+    "title": "Adding Percent Signs with formattable",
     "section": "",
-    "text": "Have you wanted to create a visual or table, and struggled to figure out how to change decimals to percents in R?\n\n\n\nHere is how you install and load the package, and you can click here to see the documentation.\ninstall.packages(\"formattable\")\nlibrary(formattable)\nI will also be loading the tidyverse and janitor packages in the background.\n\n\n\nHere is how you would break down the iris dataset by species, using the formattable package to get percents of each species.\n\niris_df %>%\n  group_by(species) %>%\n  summarise(cnt = n()) %>%\n  mutate(freq = formattable::percent(cnt / sum(cnt)))\n\n# A tibble: 3 x 3\n  species      cnt freq      \n  <fct>      <int> <formttbl>\n1 setosa        50 33.33%    \n2 versicolor    50 33.33%    \n3 virginica     50 33.33%"
+    "text": "Have you wanted to create a visual or table, and struggled to figure out how to change decimals to percents in R?\n\n\nHere is how you install and load the package, and you can click here to see the documentation.\ninstall.packages(\"formattable\")\nlibrary(formattable)\nI will also be loading the tidyverse and janitor packages in the background.\n\n\n\nHere is how you would break down the iris dataset by species, using the formattable package to get percents of each species.\n\niris_df %>%\n  group_by(species) %>%\n  summarise(cnt = n()) %>%\n  mutate(freq = formattable::percent(cnt / sum(cnt)))\n\n# A tibble: 3 x 3\n  species      cnt freq      \n  <fct>      <int> <formttbl>\n1 setosa        50 33.33%    \n2 versicolor    50 33.33%    \n3 virginica     50 33.33%"
   },
   {
-    "objectID": "projects/twitter/index.html#project-status",
-    "href": "projects/twitter/index.html#project-status",
-    "title": "Twitter Project",
-    "section": "Project Status | ",
-    "text": "Project Status | \nProject using R and postgreSQL to conduct an analysis on Tweets extracted with R via the Twitter API."
-  },
-  {
-    "objectID": "projects/car-rental/index.html",
-    "href": "projects/car-rental/index.html",
-    "title": "Revenue Growth Model",
+    "objectID": "posts/rtweet/index.html",
+    "href": "posts/rtweet/index.html",
+    "title": "Tweet Scraping with rtweet",
     "section": "",
-    "text": "Business Analysis for Lariat Rent-A-Car\n\nExamined and cleaned historical sales data using Excel (VLookUp, pivot tables and t-tests)\nFacilitated exploratory data analysis and assessed by KPI performance.\nDeveloped and presented models that showcased a 40% increase in profits."
+    "text": "Tons of data is created on social media, and using social media can be a great source for businesses to see how their customers may feel about the goods or services they offer, advertise more products or intervene when a customer had a bad experience.\nYou can access data from Twitter by making a Twitter Developer’s Account and by using the Twitter API. After making a developers account it is very easy to get the data using the rtweet package.\nClick on the hex rtweet logo to access the documentation.\n\n\n\n\n\nFirst you need to make sure you default browser is open and you are logged into your Twitter account. After you do this make sure to install the rtweet package and load it in RStudio.\n\ninstall.packages(\"rtweet\")\nlibrary(rtweet)\n\nAfter installing the package and loading it, you can use this code to set up your authentication and the search_tweets() function can retrieve Tweet data based on your parameters.\nIn this call of search_tweets() it will search for Tweets that contain “rocket league”, n = 100 means it will return 100 tweets, include_rts = FALSE means that it will not include and return Retweets, and finally lang = \"en\" means it will only return Tweets in English.\n\nauth_setup_default()\nauth_has_default()\nrt <- search_tweets(\"rocket league\", n = 100, include_rts = FALSE, lang = \"en\")"
   },
   {
     "objectID": "posts/webscrape/index.html",
     "href": "posts/webscrape/index.html",
     "title": "Web Scraping with rvest",
     "section": "",
-    "text": "Using the rvest package you can get the data you need from webpages and quickly use it for analysis.\n\nBelow I will show a simple script using the rvest, lubridate and tidyverse packages that can scrape us some data from Steam’s game stats page. Steam is a video game distribution service, and we will scrape a couple columns from their live Top games by current player count table.\nFirst of course install and load the packages, if you already have any of these packages then you just need to load them."
+    "text": "Using the rvest package you can get the data you need from webpages and quickly use it for analysis.\nBelow I will show a simple script using the rvest, lubridate and tidyverse packages that can scrape us some data from Steam’s game stats page. Steam is a video game distribution service, and we will scrape a couple columns from their live Top games by current player count table.\nFirst of course install and load the packages, if you already have any of these packages then you just need to load them."
+  },
+  {
+    "objectID": "posts/webscrape/index.html#install-and-load-packages",
+    "href": "posts/webscrape/index.html#install-and-load-packages",
+    "title": "Web Scraping with rvest",
+    "section": "Install and Load Packages",
+    "text": "Install and Load Packages\ninstall.packages(\"tidyverse\")\ninstall.packages(\"rvest\")\ninstall.packages(\"lubridate\")\n\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(lubridate)\nIf you want to see the documentation for any of these packages then click their hex image."
   },
   {
     "objectID": "posts/webscrape/index.html#setting-the-parameters",
@@ -214,20 +179,13 @@
     "href": "posts/webscrape/index.html#creating-the-data-frame",
     "title": "Web Scraping with rvest",
     "section": "Creating the Data Frame",
-    "text": "Creating the Data Frame\nAfter getting all the data you will want to put it into a data frame to work with it, so you will then use the data.frame() function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current date as a column so I know when I collected this data.\n# put both game and player data into a data frame\ndf = data.frame(game, current_players) \n# get current date\ncurrent_date <- as_datetime(Sys.Date())\n# update data frame with mutated column that adds current_date\ndf <- df %>% \n  mutate(date = current_date)\nNow lets see the first 6 rows of our new data frame that we crafted using rvest.\n\nhead(df)\n\n                              game current_players       date\n1 Counter-Strike: Global Offensive         496,503 2022-09-19\n2                           Dota 2         429,718 2022-09-19\n3                         Lost Ark         194,713 2022-09-19\n4                     Apex Legends         109,543 2022-09-19\n5                  Team Fortress 2          95,197 2022-09-19\n6              PUBG: BATTLEGROUNDS          94,120 2022-09-19"
+    "text": "Creating the Data Frame\nAfter getting all the data you will want to put it into a data frame to work with it, so you will then use the data.frame() function and add in the data you pulled from online. Below you will see how I am creating the data frame and adding in the current date as a column so I know when I collected this data.\n# put both game and player data into a data frame\ndf = data.frame(game, current_players) \n# get current date\ncurrent_date <- as_datetime(Sys.Date())\n# update data frame with mutated column that adds current_date\ndf <- df %>% \n  mutate(date = current_date)\nNow lets see the first 6 rows of our new data frame that we crafted using rvest.\n\nhead(df)\n\n[1] game            current_players date           \n<0 rows> (or 0-length row.names)"
   },
   {
-    "objectID": "posts/webscrape/index.html#install-and-load-packages",
-    "href": "posts/webscrape/index.html#install-and-load-packages",
-    "title": "Web Scraping with rvest",
-    "section": "Install and Load Packages",
-    "text": "Install and Load Packages\ninstall.packages(\"tidyverse\")\ninstall.packages(\"rvest\")\ninstall.packages(\"lubridate\")\n\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(lubridate)\nIf you want to see the documentation for any of these packages then click their hex image."
-  },
-  {
-    "objectID": "posts/rtweet/index.html",
-    "href": "posts/rtweet/index.html",
-    "title": "Tweet Scraping with rtweet",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "Tons of data is created on social media, and using social media can be a great source for businesses to see how their customers may feel about the goods or services they offer, advertise more products or intervene when a customer had a bad experience.\n\nYou can access data from Twitter by making a Twitter Developer’s Account and by using the Twitter API. After making a developers account it is very easy to get the data using the rtweet package.\nClick on the hex rtweet logo to access the documentation.\n\n\n\n\n\nFirst you need to make sure you default browser is open and you are logged into your Twitter account. After you do this make sure to install the rtweet package and load it in RStudio.\n\ninstall.packages(\"rtweet\")\nlibrary(rtweet)\n\nAfter installing the package and loading it, you can use this code to set up your authentication and the search_tweets() function can retrieve Tweet data based on your parameters.\nIn this call of search_tweets() it will search for Tweets that contain “rocket league”, n = 100 means it will return 100 tweets, include_rts = FALSE means that it will not include and return Retweets, and finally lang = \"en\" means it will only return Tweets in English.\n\nauth_setup_default()\nauth_has_default()\nrt <- search_tweets(\"rocket league\", n = 100, include_rts = FALSE, lang = \"en\")"
+    "text": "I have been practicing with Quarto for a couple of weeks now, and have enjoyed it so much! Quarto has created many more opportunities for myself and the types of deliverable I can create. If you are using R or Python and have not gotten to use Quarto yet, then this is your sign to look into how awesome it is!\nClick the image below to go to Quarto’s Website"
   }
 ]

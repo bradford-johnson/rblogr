@@ -1,7 +1,8 @@
 ---
-title: "Cleaning up Column Names with Janitor"
+title: "Cleaning up Column Names with `janitor`"
 author: "Bradford Johnson"
 date: "2022-09-16"
+image: "pan-xiaozhen-pj-BrFZ9eAA-unsplash.jpg"
 categories: [cleaning, janitor]
 ---
 
@@ -9,11 +10,9 @@ categories: [cleaning, janitor]
 
 Are they called column headers or column names? Perhaps it depends, but working with dirty ones can be avoided...
 
-![](pan-xiaozhen-pj-BrFZ9eAA-unsplash.jpg)
-
 Working with dirty data is part of being a data analyst, and the `janitor` package is great because it can help clean up the column names so they are easier to work with. I will load in the `readr` package to import a hand crafted `.csv` that I made as an example. I will also load in the `dplyr` package so I can pipe the data into functions.
 
-> `Click on the hex Janitor logo to see the documentation`
+> `Click on the hex janitor logo to see the documentation`
 >
 > [![](janitor_logo.png)](https://sfirke.github.io/janitor/)
 

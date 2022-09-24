@@ -2,14 +2,13 @@
 title: "Identifying and Removing Outliers"
 author: "Bradford Johnson"
 date: "2022-09-16"
+image: "rupert-britton-l37N7a1lL6w-unsplash.jpg"
 categories: [cleaning, outliers]
 ---
 
 ## **Identifying and Removing Outliers**
 
 Outliers can distort a dataset, but how do you find and remove them?
-
-![](rupert-britton-l37N7a1lL6w-unsplash.jpg)
 
 ## What are outliers?
 

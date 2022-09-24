@@ -9,7 +9,7 @@
 <meta name="author" content="Bradford Johnson">
 <meta name="dcterms.date" content="2022-09-16">
 
-<title>rblogr - Cleaning up Column Names with Janitor</title>
+<title>rblogr - Cleaning up Column Names with janitor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,9 +138,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html">My Projects</a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../about.html">About</a>
   </li>  
   <li class="nav-item compact">
@@ -158,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Cleaning up Column Names with Janitor</h1>
+      <h1 class="title">Cleaning up Column Names with <code>janitor</code></h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">cleaning</div>
                 <div class="quarto-category">janitor</div>
@@ -199,10 +196,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="dealing-with-dirty-column-headers" class="level2">
 <h2 class="anchored" data-anchor-id="dealing-with-dirty-column-headers"><strong>Dealing with Dirty Column Headers</strong></h2>
 <p>Are they called column headers or column names? Perhaps it depends, but working with dirty ones can be avoided…</p>
-<p><img src="pan-xiaozhen-pj-BrFZ9eAA-unsplash.jpg" class="img-fluid"></p>
 <p>Working with dirty data is part of being a data analyst, and the <code>janitor</code> package is great because it can help clean up the column names so they are easier to work with. I will load in the <code>readr</code> package to import a hand crafted <code>.csv</code> that I made as an example. I will also load in the <code>dplyr</code> package so I can pipe the data into functions.</p>
 <blockquote class="blockquote">
-<p><code>Click on the hex Janitor logo to see the documentation</code></p>
+<p><code>Click on the hex janitor logo to see the documentation</code></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://sfirke.github.io/janitor/"><img src="janitor_logo.png" class="img-fluid figure-img"></a></p>

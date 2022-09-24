@@ -2,14 +2,13 @@
 title: "Connect to a postgreSQL Database"
 author: "Bradford Johnson"
 date: "2022-09-17"
+image: "jan-antonin-kolar-lRoX0shwjUQ-unsplash.jpg"
 categories: [SQL]
 ---
 
 ## **Connect to postgreSQL Database in R**
 
 Connecting to a database can be an effective way to import data into R for analysis. In this post I will be showing how to connect to a postgreSQL database in RStudio.
-
-![](jan-antonin-kolar-lRoX0shwjUQ-unsplash.jpg)
 
 ## Packages
 

@@ -2,14 +2,13 @@
 title: "Why use GitHub with RStudio?"
 author: "Bradford Johnson"
 date: "2022-09-15"
+image: "yancy-min-842ofHC6MaI-unsplash.jpg"
 categories: [github, projects, quarto]
 ---
 
 ## **Using GitHub and RStudio Together**
 
 Organizing projects in RStudio using GitHub is one thing I wish I had known about much sooner...
-
-![](yancy-min-842ofHC6MaI-unsplash.jpg)
 
 At first when I was learning R, I would only create `R Script` files and then save each plot as a `.png`. As time went on I discovered `R Notebooks` and `R Markdown`, these where perfect for practicing my R and having a single file with multiple different `R Chunks` that I could set up for each analysis stage. It was perfect because the file when saved would save a `.html` version, so it was a great way to work on and share projects.
 

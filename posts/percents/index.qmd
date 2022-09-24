@@ -1,15 +1,14 @@
 ---
-title: "Adding Percent Signs with Formattable"
+title: "Adding Percent Signs with `formattable`"
 author: "Bradford Johnson"
 date: "2022-09-17"
+image: "david-kristianto-prE6XvaFEMY-unsplash.jpg"
 categories: [cleaning, formattable]
 ---
 
 ## **Use Formattable for Percent Signs**
 
 Have you wanted to create a visual or table, and struggled to figure out how to change decimals to percents in R?
-
-![](david-kristianto-prE6XvaFEMY-unsplash.jpg)
 
 ### The Formattable Package
 

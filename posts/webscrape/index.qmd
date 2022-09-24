@@ -1,15 +1,14 @@
 ---
-title: "Web Scraping with rvest"
+title: "Web Scraping with `rvest`"
 author: "Bradford Johnson"
 date: "2022-09-18"
+image: "josh-berendes-2zcemW2Oy8Y-unsplash.jpg"
 categories: [web scraping, rvest]
 ---
 
-## **How to Web Scrape with rvest**
+## **How to Web Scrape with `rvest`**
 
 Using the `rvest` package you can get the data you need from webpages and quickly use it for analysis.
-
-![](josh-berendes-2zcemW2Oy8Y-unsplash.jpg)
 
 Below I will show a simple script using the `rvest`, `lubridate` and `tidyverse` packages that can scrape us some data from [Steam's](https://store.steampowered.com/stats/) game stats page. Steam is a video game distribution service, and we will scrape a couple columns from their live *Top games by current player count* table.
 

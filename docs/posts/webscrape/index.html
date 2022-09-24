@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Web Scraping with rvest</h1>
+      <h1 class="title">Web Scraping with <code>rvest</code></h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">web scraping</div>
                 <div class="quarto-category">rvest</div>
@@ -194,9 +194,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <section id="how-to-web-scrape-with-rvest" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-web-scrape-with-rvest"><strong>How to Web Scrape with rvest</strong></h2>
+<h2 class="anchored" data-anchor-id="how-to-web-scrape-with-rvest"><strong>How to Web Scrape with <code>rvest</code></strong></h2>
 <p>Using the <code>rvest</code> package you can get the data you need from webpages and quickly use it for analysis.</p>
-<p><img src="josh-berendes-2zcemW2Oy8Y-unsplash.jpg" class="img-fluid"></p>
 <p>Below I will show a simple script using the <code>rvest</code>, <code>lubridate</code> and <code>tidyverse</code> packages that can scrape us some data from <a href="https://store.steampowered.com/stats/">Steam’s</a> game stats page. Steam is a video game distribution service, and we will scrape a couple columns from their live <em>Top games by current player count</em> table.</p>
 <p>First of course install and load the packages, if you already have any of these packages then you just need to load them.</p>
 </section>
@@ -242,13 +241,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                              game current_players       date
-1 Counter-Strike: Global Offensive         496,503 2022-09-19
-2                           Dota 2         429,718 2022-09-19
-3                         Lost Ark         194,713 2022-09-19
-4                     Apex Legends         109,543 2022-09-19
-5                  Team Fortress 2          95,197 2022-09-19
-6              PUBG: BATTLEGROUNDS          94,120 2022-09-19</code></pre>
+<pre><code>[1] game            current_players date           
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
 </div>
 </div>
 

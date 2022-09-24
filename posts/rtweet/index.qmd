@@ -2,14 +2,13 @@
 title: "Tweet Scraping with `rtweet`"
 author: "Bradford Johnson"
 date: "2022-09-19"
+image: "jeremy-bezanger-Jm1YUfYjpHI-unsplash.jpg"
 categories: [rtweet]
 ---
 
 ## **Scraping Twitter**
 
 Tons of data is created on social media, and using social media can be a great source for businesses to see how their customers may feel about the goods or services they offer, advertise more products or intervene when a customer had a bad experience.
-
-![](jeremy-bezanger-Jm1YUfYjpHI-unsplash.jpg)
 
 You can access data from Twitter by making a [Twitter Developer's Account](https://developer.twitter.com/en) and by using the Twitter API. After making a developers account it is very easy to get the data using the `rtweet` package.
 
