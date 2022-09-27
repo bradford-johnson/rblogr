@@ -6,4 +6,4 @@
 <i>Click the icons below to see the project files and deliverables</i>
 | Blog | ReadMe |
 | :-: | :-: |
-|[<img src="images/filetype-xlsx.svg" width="54px">](https://1drv.ms/x/s!Ahpkb3AfX4xfgsA0TbaqsDQorD8vKA?e=vEQXVr)|[<img src="images/filetype-pptx.svg" width="54px">](https://1drv.ms/p/s!Ahpkb3AfX4xfgsAztt7OBQG6rwSqYg?e=HYOXor)|
+|[<img src="journal-richtext.svg" width="54px">](https://bradfordjohnson.github.io/rblogr/)|[<img src="github.svg" width="54px">](https://1drv.ms/p/s!Ahpkb3AfX4xfgsAztt7OBQG6rwSqYg?e=HYOXor)|
