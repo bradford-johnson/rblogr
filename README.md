@@ -1,5 +1,5 @@
-# rblogr
-![](https://img.shields.io/badge/%E2%8F%B3-Ongoing%20project-orange.png)
+# **rblogr |** <img src="rstudiobadge.svg"> + <img src="quarto.png" height="28px">
+### **Quarto Blog |** ![](https://img.shields.io/badge/%E2%8F%B3-Ongoing%20project-orange.png)
 
 > Blog that features R vignettes in blog post format, that are like “mini-tutorials” for anyone interested in R.
 
