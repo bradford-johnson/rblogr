@@ -1,7 +1,7 @@
 # **rblogr |** <img src="rstudiobadge.svg"> **+** <img src="quarto.png" height="28px">
 > ### **Quarto Blog |** ![](https://img.shields.io/badge/%E2%8F%B3-Ongoing%20project-orange.png)
-> - Developing a blog that shares vignettes of R, and these tutorials are tailored for people wanting to learn R.
-> - Implementing Quarto to create high quality documents and reports for sharing data.
+> - Developing a blog that shares vignettes of `R`, and these tutorials are tailored for people wanting to learn `R`.
+> - Implementing `Quarto` to create high quality documents and reports for sharing data.
 >
 > <i>Click the icons below to see the project files and deliverables</i>
 > | Blog | ReadMe |
@@ -12,7 +12,7 @@
 > - This blog is a project I wanted to do in order to **share** `R` **with others**.  
 > - I want to share `R` **tutorials**, **tips** and **tricks**.  
 > - I also want to use this blog as a portfolio for my work in both `R` and data analytics.  
-> - This blog was originally going to be a book titled “*R Cookbook*”. While working on this book it became clearer that a blog would be a more effective medium to continuously add and sharecontent.
+> - This blog was originally going to be a book titled “*R Cookbook*”. While working on this book it became clearer that a blog would be a **more effective** medium to continuously add and sharecontent.
 ## **💡 Inspiration**
 > When learning and even now, if I do not know how to make a specific visual or do somethign in `R`, then I *Google* it. I would then come across books like [R Graphics Cookbook](https://r-graphics.org/), and many different websites like [The R Graph Gallery](https://r-graph-gallery.com/index.html), which explained in detial how different parameters or elements work, and then showed `R` vignettes of the code. This would solve my problem or allow me to continue, and then next time I have another "*road block*" I will go and restart the process. 
 >  
