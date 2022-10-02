@@ -11,7 +11,7 @@ image: "karl-kohler-a80xLtm_tMQ-unsplash.jpg"
 categories: [quarto, SQL, ggplot2]
 ---
 
-Using SQL to query a database then visualizing in R.
+Using `SQL` to query a database then visualizing insights in `R`.
 
 ```{r}
 #| message: false
