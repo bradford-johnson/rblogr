@@ -24,5 +24,5 @@
 > - `GitHub` for version control.
 ## **📖 Resources | Citations**
 > https://r-graph-gallery.com/index.html  
-> http://www.cookbook-r.com/
+> http://www.cookbook-r.com/  
 > https://www.rstudio.com/conference/2022/talks/sessions/quarto-deep-dive/websites-books-blogs-quarto/
