@@ -18,7 +18,7 @@
 >  
 > This learning process continuing, I began to notice how **useful** these resources were, and that made me want to create my own "*R Cookbook*" which would allow me share what I have learned to **help others**.
 ## **📐 Methods**
-> Tools I am using:
+> **Tools** I am using:
 > - `RStudio` and `Quarto` to create the blog.
 > - `GitHub Pages` to host the blog.
 > - `GitHub` for version control.
