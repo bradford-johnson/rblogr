@@ -13,6 +13,10 @@ image: "djim-loic-ft0-Xu4nTvA-unsplash.jpg"
 
 You can use this code to create your own timeline!
 
+> This is what mine looks like...
+>
+> Big thanks to **Antoine Soetewey** for sharing this code in [this](https://statsandr.com/blog/how-to-create-a-timeline-of-your-cv-in-r/) post.
+
 ```{r warning=FALSE,message=FALSE}
 # All packages used below must be installed first
 #library(devtools)
