@@ -8,7 +8,7 @@ categories: [rtweet]
 
 ## **Scraping Twitter**
 
-Tons of data is created on social media, and using social media can be a great source for businesses to see how their customers may feel about the goods or services they offer, advertise more products or intervene when a customer had a bad experience.
+Tons of data is created on social media, and using social media can be a great source for businesses to learn more about their customers.
 
 You can access data from Twitter by making a [Twitter Developer's Account](https://developer.twitter.com/en) and by using the Twitter API. After making a developers account it is very easy to get the data using the `rtweet` package.
 
