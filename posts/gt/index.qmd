@@ -1,0 +1,311 @@
+---
+title: "What can you do with `gt`?"
+author: "Bradford Johnson"
+date: "2022-10-10"
+image: "g-ch-p-lat-d-p-jR-B6C430rk-unsplash.jpg"
+categories: [tables, gt]
+format: html
+code-fold: true
+editor: visual
+---
+
+Create unique and awesome data tables with the `gt` package.
+
+This code is from **Kaustav Sen** and to view their post [click here](https://rpubs.com/kaustav/table_contest_2020).
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse) # for reading in and wrangling the data
+library(gt) # for awesome tables
+
+beer_awards <- readr::read_csv("https://git.io/JTrx9")
+
+top_10_breweries <- 
+  beer_awards %>% 
+  count(brewery, medal) %>% 
+  pivot_wider(names_from = medal, values_from = n) %>% 
+  arrange(desc(Gold)) %>% 
+  head(10)
+
+top_10_breweries
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+gt_table_step_1 <- gt(top_10_breweries)
+gt_table_step_1
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+gt_table_step_2 <- gt_table_step_1 %>% 
+  tab_style(
+    style = cell_text(color = "#F2CB05", weight = "bold"),
+    locations = cells_body(
+      columns = 1, 
+      rows = brewery %in% c("Firestone Walker Brewing Co.", "Marin Brewing Co.")
+    )
+  )
+
+gt_table_step_2
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+gt_table_step_3 <- gt_table_step_2 %>% 
+  tab_header(
+    title = "Great American Beer Festival",
+    subtitle = html(
+      "<span style = 'color: grey'>All time top 10 breweries of which 2 
+      are <span style = 'color: #F2CB05'><b>California</b></span> based</span>"
+    )
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("Titan One"), 
+      align = "left", 
+      size = "xx-large"
+    ),
+    locations = cells_title("title")
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Sans"), 
+      align = "left", 
+      size = "large"
+    ),
+    locations = cells_title("subtitle")
+  ) %>% 
+  tab_style(
+    style = cell_borders(
+      sides = "bottom", 
+      color = "#ebe8e8", 
+      weight = px(2)
+    ),
+    locations = cells_title("subtitle")
+  ) %>%
+  tab_spanner(
+    label = "Medals Won",
+    columns = 2:4
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Sans"), 
+      size = "large"
+    ),
+    locations = list(
+      cells_column_labels(everything()), 
+      cells_body(columns = 1)
+    )
+  ) %>%  
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Sans"), 
+      size = "medium", 
+      weight = "bold"
+    ),
+    locations = cells_column_spanners("Medals Won")
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Mono"), 
+      size = "large"
+    ),
+    locations = cells_body(columns = 2:4)
+  )
+
+gt_table_step_3
+```
+
+------------------------------------------------------------------------
+
+```{r}
+
+library(emo)
+gt_table_step_4 <- gt_table_step_3 %>% 
+  cols_label(
+    brewery = "",
+    Gold = emo::medal(1),
+    Silver = emo::medal(3),
+    Bronze = emo::medal(2)
+  )
+
+gt_table_step_4
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+plot_barchart <- function(brewery, data) {
+  
+  plot_data <- 
+    beer_awards %>% 
+    filter(brewery == {{ brewery }}) %>% 
+    count(year)
+
+  plot <- 
+    plot_data %>% 
+    ggplot(aes(year, n)) +
+    geom_col(fill = "#F28705", alpha = 0.75) +
+    geom_segment(aes(x = 1986.5, xend = 1986.5, y = -0.1, yend = -0.5)) +
+    geom_segment(aes(x = 2020.5, xend = 2020.5, y = -0.1, yend = -0.5)) +
+    geom_segment(aes(x = 1986.5, xend = 2020.5, y = -0.1, yend = -0.1)) +
+    annotate("text", x = 1986.5, y = -1.25, 
+             label = "1987", size = 10, color = "grey40") +
+    annotate("text", x = 2020.5, y = -1.25, 
+             label = "2020", size = 10, color = "grey40") +
+    scale_x_continuous(limits = c(1970, 2035)) +
+    scale_y_continuous(limits = c(-4, 10)) +
+    theme_void()    
+    
+  plot
+  
+}
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+# devtools::install_github("hadley/emo", force = TRUE)
+library(emo)
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+top_10_breweries_with_graphs <- top_10_breweries %>% 
+  mutate(plots = purrr::map(brewery, plot_barchart, data = beer_awards))
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+gt_table_step_5 <- gt(top_10_breweries_with_graphs) %>% 
+  tab_style(
+    style = cell_text(color = "#F2CB05", weight = "bold"),
+    locations = cells_body(
+      columns = 1, 
+      rows = brewery %in% c("Firestone Walker Brewing Co.", "Marin Brewing Co.")
+    )
+  ) %>% 
+  tab_header(
+    title = "Great American Beer Festival",
+    subtitle = html(
+      "<span style = 'color: grey'>All time top 10 breweries of which 2 
+      are <span style = 'color: #F2CB05'><b>California</b></span> based</span>"
+    )
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("Titan One"), 
+      align = "left", 
+      size = "xx-large"
+    ),
+    locations = cells_title("title")
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Sans"), 
+      align = "left", 
+      size = "large"
+    ),
+    locations = cells_title("subtitle")
+  ) %>% 
+  tab_style(
+    style = cell_borders(
+      sides = "bottom", 
+      color = "#ebe8e8", 
+      weight = px(2)
+    ),
+    locations = cells_title("subtitle")
+  ) %>%
+  tab_spanner(
+    label = "Medals Won",
+    columns = 2:4
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Sans"), 
+      size = "large"
+    ),
+    locations = list(
+      cells_column_labels(everything()), 
+      cells_body(columns = 1)
+    )
+  ) %>%  
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Sans"), 
+      size = "medium", 
+      weight = "bold"
+    ),
+    locations = cells_column_spanners("Medals Won")
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      font = google_font("IBM Plex Mono"), 
+      size = "large"
+    ),
+    locations = cells_body(columns = 2:4)
+  ) %>% 
+  cols_label(
+    brewery = "",
+    Gold = emo::medal(1),
+    Silver = emo::medal(3),
+    Bronze = emo::medal(2)
+  ) %>% 
+  #------------------------------------#
+  #  This is the section which is new  #
+  #------------------------------------#
+  text_transform(
+    locations = cells_body(vars(plots)),
+    fn = function(x) {
+      map(top_10_breweries_with_graphs$plots, ggplot_image, height = px(120), aspect_ratio = 1.5)
+    }
+  )
+
+gt_table_step_5
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| warning: false
+#| message: false
+gt_table_step_final <- gt_table_step_5 %>% 
+  cols_label(
+    plots = md("**Medal Distribution<br>1987-2020**")
+  ) %>% 
+  tab_source_note(md("**Data**: Great American Beer Festival | **Table**: Kaustav Sen")) %>% 
+  cols_width(
+    1 ~ px(300),
+    2:4 ~ px(50)
+  ) %>%
+  opt_table_font(font = google_font("IBM Plex Sans")) %>%  # Used to set the font for the source note
+  tab_options(
+    column_labels.border.top.color = "white",
+    column_labels.border.bottom.color = "black",
+    table.border.top.color = "white",
+    table.border.bottom.color = "white",
+    table_body.hlines.color = "white"
+  )
+gt_table_step_final
+```

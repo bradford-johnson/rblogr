@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/gt/index.html",
       "/posts/timeline/index.html",
       "/posts/radial/index.html",
       "/posts/sql-ggplot/index.html",
